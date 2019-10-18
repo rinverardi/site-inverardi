@@ -1,3 +1,7 @@
+.broken {
+  text-decoration: line-through;
+}
+
 .decoration {
   background: #1eaedb;
   height: 1em;
