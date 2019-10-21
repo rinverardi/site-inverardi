@@ -4,14 +4,15 @@
 
 .decoration {
   background: #1eaedb;
-  height: 1em;
+  height: 2rem;
 }
 
 h1 {
   font-size: 14pt;
-  margin: 2em 0;
+  margin: 2rem 0;
 }
 
 h2 {
   font-size: 32pt;
+  margin: 2rem 0;
 }
