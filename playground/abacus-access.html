@@ -8,6 +8,34 @@
     <link href="../css/customize.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      var parameters = new URLSearchParams(window.location.search);
+
+      var messagingKey = parameters.get('messaging-key');
+      var messagingToken = parameters.get('messaging-token');
+
+      function sendNotification() {
+        fetch('https://fcm.googleapis.com/fcm/send', {
+          body: JSON.stringify({
+            'data': {
+              'click_action': 'FLUTTER_NOTIFICATION_CLICK',
+            },
+            'notification': {
+              'body_loc_key' : 'notification_body_login',
+              'title_loc_args' : ['abaintern.abacus.ch'],
+              'title_loc_key' : 'notification_title_login',
+            },
+            'priority': 'high',
+            'to': messagingToken
+          }),
+          headers: {
+            'Authorization': 'key=' + messagingKey,
+            'Content-Type': 'application/json'
+          },
+          method: 'POST'
+        });
+      }
+    </script>
     <title>Playground | Abacus Access</title>
   </head>
   <body>
@@ -18,7 +46,7 @@
         <h1>Playground | <b>Abacus Access</b></h1>
       </div>
       <div class="row">
-        <h2>Links</h2>
+        <h2>Onboarding</h2>
       </div>
       <div class="broken row">
         <a href="https://access.abacus.ch/app/v1/operations/tag:abacus.ch,2019:erp/qr-code-onboarding?code=dc6604&state=8eef2d&target-url=abaintern.abacus.ch">Onboarding via deep link</a>
@@ -26,6 +54,17 @@
       <div class="row">
         <a href="https://f317a5.page.link/18ce2c">Onboarding via dynamic link</a>
       </div>
+      <div class="row">
+        <h2>Approval</h2>
+      </div>
+      <div class="row" id="sendNotification">
+        <a href="javascript:sendNotification();">Approve a login</a>
+      </div>
+      <script>
+        if (messagingKey == null || messagingToken == null) {
+          document.getElementById('sendNotification').classList.add('broken');
+        }
+      </script>
     </div>
   </body>
 </html>
