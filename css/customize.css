@@ -16,3 +16,7 @@ h2 {
   font-size: 4rem;
   margin: 2rem 0;
 }
+
+ul.flat {
+  list-style-type: none;
+}
