@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- einkommentieren 
+<School xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="school.xsd">
+    <Departments>
+        <Department id="IT"/>
+        <Department id="EL"/>
+    </Departments>
+    <Modules>
+        <Module code="WebG" departments="IT">
+            <ModuleName>Web-Grundlagen</ModuleName>
+        </Module>
+        <Module code="OOP" departments="IT">
+            <ModuleName>Objektoriente Programmierung</ModuleName>
+        </Module>
+        <Module code="EL1" departments="IT EL">
+            <ModuleName>Elektrotechnik I</ModuleName>
+        </Module>
+    </Modules>
+    <Lecturers>
+        <Lecturer gender="m" modules="WebG OOP">
+            <LastName>Keller</LastName>
+            <FirstName>Peter</FirstName>
+            <Street>Meine Strasse 3</Street>
+            <ZIP>8001</ZIP>
+            <City>Zurich</City>
+            <AHVNumber>123.4567.8901.23</AHVNumber>
+            <BirthDate>1982-01-01</BirthDate>
+        </Lecturer>
+    </Lecturers>
+    <Students>
+        <Student gender="m">
+            <LastName>Meier</LastName>
+            <FirstName>Hans</FirstName>
+            <Street>Musterstrasse 3</Street>
+            <ZIP>8001</ZIP>
+            <City>Zurich</City>
+            <AHVNumber>123.4567.8901.24</AHVNumber>
+            <BirthDate>1990-01-01</BirthDate>
+            <Exams>
+                <Exam module="OOP" date="2016-01-01" grade="4"/>
+                <Exam module="WebG" date="2016-01-02" grade="5"/>
+            </Exams>
+        </Student>
+        <Student gender="f">
+            <LastName>Müller</LastName>
+            <FirstName>Doris</FirstName>
+            <Street>Meine Strasse 4</Street>
+            <ZIP>8001</ZIP>
+            <City>Zurich</City>
+            <AHVNumber>123.4567.8901.25</AHVNumber>
+            <BirthDate>1990-01-02</BirthDate>
+        </Student>
+    </Students>
+</School>
+-->
+<!-- auskommentieren -->
+<School></School>

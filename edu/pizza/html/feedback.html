@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../css/tony.css" rel="stylesheet" />
+    <script src="../js/tony.js"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="The feedback page for Tony's Pizza Factory">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      document.addEventListener('submit', (submitEvent) => {
+        if (!validateFeedbackForm())
+          submitEvent.preventDefault();
+      });
+
+      window.addEventListener('load', function() {
+        document.querySelectorAll('.validationTarget').forEach(input => {
+          input.addEventListener('input', validateFeedbackForm);
+        });
+
+        validateFeedbackForm();
+      });
+    </script>
+    <title>Feedback</title>
+</head>
+<body>
+<header>
+    <h1>Tony's Pizza Factory</h1>
+    <nav>
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul>
+            <li><a href="pizza.html">Pizza</a></li>
+            <li><a href="salad.html">Salad</a></li>
+            <li><a href="softdrink.html">Soft drinks</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Tell us what you think.</h2>
+    <form action="http://httpbin.org/post" id="feedbackForm" name="feedBackForm" method="POST" novalidate>
+        <ul>
+            <li>
+                <span>How do you like our pizza?</span>
+                <div class="radioButtons">
+                    <label><input class="validationTarget" name="pizzaTaste" type="radio" value="awesome">Awesome</label>
+                    <label><input class="validationTarget" name="pizzaTaste" type="radio" value="good">Good</label>
+                    <label><input class="validationTarget" name="pizzaTaste" type="radio" value="okay">Okay</label>
+                    <label><input class="validationTarget" name="pizzaTaste" type="radio" value="poor">Poor</label>
+                </div>
+            </li>
+            <li>
+                <span></span>
+                <div class="collapsed validationError" id="pizzaTasteValidationError"></div>
+            </li>
+            <li>
+                <span>What do you think about our prices?</span>
+                <div class="radioButtons">
+                    <label><input class="validationTarget" name="pizzaPrice" type="radio" value="fair">Fair</label>
+                    <label><input class="validationTarget" name="pizzaPrice" type="radio" value="okay">Okay</label>
+                    <label><input class="validationTarget" name="pizzaPrice" type="radio" value="expensive">Expensive</label>
+                </div>
+            </li>
+            <li>
+                <span></span>
+                <div class="collapsed validationError" id="pizzaPriceValidationError"></div>
+            </li>
+            <li>
+                <label for="customerName">Your name?</label>
+                <input class="validationTarget" id="customerName" name="customerName" type="text">
+            </li>
+            <li>
+                <span></span>
+                <div class="collapsed validationError" id="customerNameValidationError"></div>
+            </li>
+            <li>
+                <label for="customerEmail">Your e-mail address?</label>
+                <input class="validationTarget" id="customerEmail" name="customerEmail" type="email">
+            </li>
+            <li>
+                <span></span>
+                <div class="collapsed validationError" id="customerEmailValidationError"></div>
+            </li>
+            <li>
+                <label for="comment">What can we do better?</label>
+                <textarea class="validationTarget" id="comment" rows="10" name="comment"></textarea>
+            </li>
+            <li>
+                <span></span>
+                <div class="collapsed validationError" id="commentValidationError"></div>
+            </li>
+            <li>
+                <span></span>
+                <input name="submit" type="submit" value="Send">
+            </li>
+        </ul>
+    </form>
+</main>
+
+
+<footer>
+    <div id="hours">
+        Hours:<br>
+        Mon-Thu: <time datetime="11:00">11:00</time> - <time datetime="23:00">23:00</time>.<br>
+        Fri-Sat: <time datetime="11:00">11:00</time> - <time datetime="00:00">24:00</time>.<br>
+        Sunday closed
+    </div>
+    <div id="quote">
+        <q>The Pizzeria is one place I have been wanting to visit for a long time. The reason being their Napoli pizza which absolutely blew me away.</q>
+        <cite>-Jimmy</cite>
+    </div>
+    <div id="address">
+        <address>
+            Address:<br>
+            Tony's Pizza Factory<br>
+            2122 N Clark St<br>
+            Chicago, IL 60614, USA<br>
+        </address>
+    </div>
+</footer>
+</body>
+</html>

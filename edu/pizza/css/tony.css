@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Glegoo&display=swap');
+
+.invisible { display: none; }
+
+* { box-sizing: border-box; }
+
+a { color: #226; }
+
+body {
+  font-family: 'Glegoo', serif;
+  margin: 0;
+}
+
+h2 { text-align: center; }
+
+/* PAGES > FEEDBACK */
+
+#feedbackForm { margin: 0 1em 2em 1em; }
+
+#feedbackForm div.radioButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#feedbackForm div.validationError {
+  color: red;
+  margin: 0.2em 0 0.4em 0;
+  max-height: 2em;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+#feedbackForm div.validationError.collapsed { max-height: 0; }
+
+#feedbackForm input[type='submit']:disabled { opacity: 0.7; }
+
+#feedbackForm input[type='email'],
+#feedbackForm input[type='submit'],
+#feedbackForm input[type='text'],
+#feedbackForm textarea {
+  background-color: #eee;
+  border: 0.1em solid #bbb;
+  border-radius: 0.3em;
+  outline: 0;
+  padding: 0.5em;
+  resize: none;
+}
+
+#feedbackForm input:focus,
+#feedbackForm textarea:focus {
+  background-color: white;
+  border-color: #88f;
+  box-shadow: 0 0 0.5em #bbb;
+}
+
+#feedbackForm li {
+  display: flex;
+  justify-content: center;
+}
+
+#feedbackForm li > * {
+  flex-basis: 50%;
+  max-width: 30rem;
+}
+
+#feedbackForm li > label,
+#feedbackForm li > span {
+  margin-right: 1em;
+  text-align: right;
+}
+
+#feedbackForm ul { padding: 0; }
+
+/* PAGES > HOME > SECTIONS */
+
+#sections {
+  justify-content: center;
+  display: flex;
+  margin: 1em 0;
+}
+
+#sections a {
+  background-position: center;
+  background-size: cover;
+  border: 0 solid;
+  border-radius: 1em;
+  box-sizing: border-box;
+  height: 12em;
+  margin: 1em;
+  transition: border-width 0.2s linear;
+  width: 20em;
+}
+
+#sections a:hover { border-bottom-width: 0.5em; }
+
+#sections a:nth-child(1) { background-image: url(../images/section_pizza_300x225.jpg); }
+#sections a:nth-child(2) { background-image: url(../images/section_salad_300x225.jpg); }
+#sections a:nth-child(3) { background-image: url(../images/section_softdrink_300x225.jpg); }
+
+/* PAGES > HOME > SLIDE SHOW */
+
+#slideShow {
+  background-image: url(../images/restaurant.jpg);
+  background-position: 50% 75%;
+  background-size: cover;
+  border-radius: 1em;
+  height: 25em;
+  margin: 1em;
+  text-align: center;
+}
+
+/* PAGES > PRODUCTS */
+
+#productList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#productList .product {
+  background-image: linear-gradient(to bottom, #fff, #eee);
+  border-radius: 1em;
+  flex-basis: 20em;
+  margin: 0 1em 2em 1em;
+}
+
+#productList .productDescription { margin: 0 1em 1em 1em; }
+
+#productList form {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1em 1em 1em;
+}
+
+#productList h3 { margin: 0 1em 1em 1em; }
+
+#productList img {
+  border-radius: 1em 1em 0 0;
+  width: 100%;
+}
+
+/* NAVIGATION */
+
+#address { margin: 1em; }
+
+#hours { margin: 1em; }
+
+#quote {
+  margin: 0 1em;
+  flex-basis: 20rem;
+}
+
+h1 {
+  display: inline;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+footer {
+  align-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer, header {
+  background-color: rgb(159, 197, 248);
+  overflow: hidden;
+  width: 100%;
+}
+
+nav {
+  margin-top: 0.5em;
+  float: right;
+}
+
+nav a {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-bottom: 1em solid;
+  transition: border-width 0.3s linear;
+}
+
+nav li {
+  display: inline;
+  margin-right:1em;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:740px){
+
+  /* PAGES > FEEDBACK */
+
+  /* Rearrange the feedback form for medium screens. */
+
+  #feedbackForm div.validationError,
+  #feedbackForm li > label,
+  #feedbackForm li > span {
+    text-align: center;
+  }
+
+  #feedbackForm li { flex-direction: column; }
+
+  #feedbackForm li > * { max-width: none; }
+
+  /* PAGES > HOME > SECTIONS */
+
+  /* Rearrange the sections for medium screens. */
+
+  #sections {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Shrink the sections for medium screens. */
+
+  #sections a {
+    height: 8rem;
+    width: 16rem;
+  }
+
+  /* PAGES > HOME > SLIDE SHOW */
+
+  /* Hide the slide show for small screens. */
+
+  #slideShow { display: none; }
+
+  #hours, #quote, #address{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+  /* PAGES > HOME > SECTIONS */
+
+  /* Shrink the sections for small screens. */
+
+  #sections a {
+    height: 6rem;
+    width: 12rem;
+  }
+
+  /* NAVIGATION */
+
+  /* Replace the navigation with a burger menu for small screens. */
+
+  nav{ margin-top: 0.25em; }
+
+  nav > span {
+    background: rgb(0, 0, 0);
+    display: block;
+    height: 4px;
+    margin: 4px 4px;
+    width: 19px;
+  }
+
+  nav > ul { display: none; }
+}
