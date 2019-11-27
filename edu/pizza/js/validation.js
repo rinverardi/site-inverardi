@@ -33,12 +33,6 @@ function getRadioValue(form, formField) {
   return '';
 }
 
-function checkEmail(email) {
-  let emailExpression = /\S+@\S+\.\S+/;
-
-  return emailExpression.test(email);
-}
-
 function validateFeedback(formData) {
   let validationErrors = []
 

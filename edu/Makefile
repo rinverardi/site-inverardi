@@ -1,8 +1,8 @@
 all:
 	mkdir -p pizza
 	rsync\
-	  -a\
-	  -d\
+	  -av\
+	  --delete\
 	  --exclude .git\
 	  --exclude .gitignore\
 	  --exclude .gitkeep\
