@@ -152,9 +152,11 @@ h2 { text-align: center; }
 }
 
 h1 {
-  display: inline;
-  font-size: 1.5rem;
-  margin-left: 1rem;
+  height: 2em;
+  overflow: hidden;
+  position: absolute;
+  font-size: 1.4rem;
+  margin: 0 2em 0 1em;
 }
 
 footer {
@@ -174,6 +176,7 @@ footer, header {
 
 nav {
   margin-top: 0.5em;
+  min-height: 2.2em;
   float: right;
 }
 
@@ -189,7 +192,7 @@ nav a:hover {
 
 nav li {
   display: inline;
-  margin-right:1em;
+  margin-right: 1em;
 }
 
 nav ul {
@@ -198,7 +201,7 @@ nav ul {
   padding: 0;
 }
 
-@media only screen and (max-width:740px){
+@media only screen and (max-width:740px) {
 
   /* PAGES > FEEDBACK */
 
@@ -232,16 +235,56 @@ nav ul {
 
   /* PAGES > HOME > SLIDE SHOW */
 
-  /* Hide the slide show for small screens. */
+  /* Hide the slide show for medium screens. */
 
   #slideShow { display: none; }
 
-  #hours, #quote, #address{
+  #hours, #quote, #address {
     width: 100%;
+  }
+
+  /* NAVIGATION */
+
+  /* Replace the navigation with a burger menu for small screens. */
+
+  nav a:hover {
+    border-bottom: 0;
+  }
+
+  nav li {
+    display: block;
+  }
+
+  #hamburgerLinks {
+    display: block;
+    margin-top: 2.5em;
+    max-height: 8em;
+    text-align: right;
+    transition: max-height 0.5s;
+  }
+
+  #hamburgerLinks.collapsed { max-height: 0; }
+
+  #hamburgerMenu {
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+  }
+
+  #hamburgerMenu a {
+    outline: 0;
+  }
+
+  #hamburgerMenu span {
+    background: black;
+    display: block;
+    height: 3px;
+    margin: 5px 0;
+    width: 20px;
   }
 }
 
-@media only screen and (max-width: 599px){
+@media only screen and (max-width: 599px) {
 
   /* PAGES > HOME > SECTIONS */
 
@@ -251,20 +294,4 @@ nav ul {
     height: 6rem;
     width: 12rem;
   }
-
-  /* NAVIGATION */
-
-  /* Replace the navigation with a burger menu for small screens. */
-
-  nav{ margin-top: 0.25em; }
-
-  nav > span {
-    background: rgb(0, 0, 0);
-    display: block;
-    height: 4px;
-    margin: 4px 4px;
-    width: 19px;
-  }
-
-  nav > ul { display: none; }
 }

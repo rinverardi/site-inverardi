@@ -7,6 +7,7 @@ all:
 	  --exclude .gitignore\
 	  --exclude .gitkeep\
 	  --exclude .gitlab-ci.yml\
+	  --exclude .idea\
 	  pizza.git/ pizza
 
 clean:
