@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="../css/popup.css" rel="stylesheet" />
     <link href="../css/tony.css" rel="stylesheet" />
-    <script src="../js/navigation.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="The order page for Tony's famous pizzas">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/configuration.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/orders.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/products.js"></script>
+    <script>
+      showProducts(apiUrl + 'pizzas', mapPizza);
+    </script>
     <title>Pizza</title>
 </head>
 <body>
@@ -20,6 +28,7 @@
             </a>
         </div>
         <ul class="collapsed" id="hamburgerLinks">
+            <li><a href="index.html">Home</a></li>
             <li><a href="pizza.html">Pizza</a></li>
             <li><a href="salad.html">Salad</a></li>
             <li><a href="softdrink.html">Soft drinks</a></li>
@@ -31,84 +40,18 @@
 <main>
     <h2>Pizza</h2>
     <div id="productList">
-        <div class="product">
-            <img src="../images/pizza_piccante_250x250.jpg" alt="A tasty pizza piccante">
-            <h3>Piccante</h3>
+        <div class="product" id="productTemplate">
+            <div class="productImage">
+                <img src="../images/void.svg" alt="Doesn't it look tasty?">
+            </div>
+            <h3 class="productName">Product name</h3>
             <form action="http://httpbin.org/post" method="POST">
                 <div class="productPrice">$16</div>
+                <input type="hidden" name="name">
+                <input type="hidden" name="type">
                 <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
             </form>
-            <div class="productDescription">Tomato, mozzarella, spicy salami, chillies, oregano</div>
-        </div>
-
-        <div class="product">
-            <img src="../images/pizza_giardino_250x250.jpg" alt="A tasty pizza giardino">
-            <h3>Giardino</h3>
-            <form action="http://httpbin.org/post" method="POST">
-                <div class="productPrice">$14</div>
-                <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
-            </form>
-            <div class="productDescription">Tomato, mozzarella, artichokes, fresh mushrooms</div>
-        </div>
-
-        <div class="product">
-            <img src="../images/pizza_prosciutto_250x250.jpg" alt="A tasty pizza prosciutto e funghi">
-            <h3>Prosciutto e funghi</h3>
-            <form action="http://httpbin.org/post" method="POST">
-                <div class="productPrice">$15</div>
-                <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
-            </form>
-            <div class="productDescription">Tomato, mozzarella, ham, fresh mushrooms, oregano</div>
-        </div>
-
-        <div class="product">
-            <img src="../images/pizza_quattro_formaggi_250x250.jpg" alt="A tasty pizza quattro formaggi">
-            <h3>Quattro formaggi</h3>
-            <form action="http://httpbin.org/post" method="POST">
-                <div class="productPrice">$13</div>
-                <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
-            </form>
-            <div class="productDescription">Tomato, mozzarella, parmesan, gorgonzola, fontina</div>
-        </div>
-
-        <div class="product">
-            <img src="../images/pizza_quattro_stagioni_250x250.jpg" alt="A tasty pizza quattro stagioni">
-            <h3>Quattro stagioni</h3>
-            <form action="http://httpbin.org/post" method="POST">
-                <div class="productPrice">$17</div>
-                <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
-            </form>
-            <div class="productDescription">Tomato, mozzarella, ham, artichokes, fresh mushrooms</div>
-        </div>
-
-        <div class="product">
-            <img src="../images/pizza_stromboli_250x250.jpg" alt="A tasty pizza stromboli">
-            <h3>Stromboli</h3>
-            <form action="http://httpbin.org/post" method="POST">
-                <div class="productPrice">$12</div>
-                <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
-            </form>
-            <div class="productDescription">Tomato, mozzarella, fresh chillies, olives, oregano</div>
-        </div>
-
-        <div class="product">
-            <img src="../images/pizza_verde_250x250.jpg" alt="A tasty pizza verde">
-            <h3>Verde</h3>
-            <form action="http://httpbin.org/post" method="POST">
-                <div class="productPrice">$13</div>
-                <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
-            </form>
-            <div class="productDescription">Tomato, mozzarella, broccoli, spinach, oregano</div>
-        </div>
-
-        <div class="product">
-            <img src="../images/pizza_rustica_250x250.jpg" alt="A tasty pizza rustica">
-            <h3>Rustica</h3>
-            <form action="http://httpbin.org/post" method="POST">
-                <div class="productPrice">$15</div>
-                <input type="image" name="submit" src="../images/icon_cart_30x30.png" alt="Add to cart">
-            </form>
-            <div class="productDescription">Tomato, mozzarella, ham, bacon, onions, garlic, oregano</div>
+            <div class="productDescription">Product description</div>
         </div>
     </div>
 </main>
@@ -133,5 +76,11 @@
         </address>
     </div>
 </footer>
+
+<div id="popupBackground">
+  <div id="popupWindow">
+    <div id="popupWindowContent"></div>
+  </div>
+</div>
 </body>
 </html>

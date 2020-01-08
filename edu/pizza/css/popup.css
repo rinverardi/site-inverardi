@@ -1,0 +1,30 @@
+#popupBackground {
+  background-color: rgba(0, 0, 0, 40%);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#popupWindow {
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0px 0px 20px black;
+  left: 50%;
+  position: fixed;
+  padding: 0 20px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#popupWindowContent {
+  background-image: url(../images/close.svg);
+  background-position: center right;
+  background-repeat: no-repeat;
+  min-height: 50px;
+  padding: 20px 50px 20px 0;
+}

@@ -13,6 +13,24 @@ body {
 
 h2 { text-align: center; }
 
+/* PAGES > ADMIN */
+
+.history {
+  background: #eee;
+  border: 2px solid #ccc;
+  border-radius: 1em;
+  margin: auto;
+  max-width: 90%;
+  padding: 0.5em 0;
+}
+
+.history div { padding: 0 01em; }
+.history div.key { font-weight: bold; }
+.history hr { border: 1px solid #ccc; }
+.history hr:last-child { display: none; }
+
+.summary { text-align: center; }
+
 /* PAGES > FEEDBACK */
 
 #feedbackForm { margin: 0 1em 2em 1em; }
@@ -133,7 +151,10 @@ h2 { text-align: center; }
   margin: 0 1em 1em 1em;
 }
 
-#productList h3 { margin: 0 1em 1em 1em; }
+#productList h3 {
+  font-size: 1rem;
+  margin: 0 1em 0 1em;
+}
 
 #productList img {
   border-radius: 1em 1em 0 0;
@@ -258,7 +279,7 @@ nav ul {
   #hamburgerLinks {
     display: block;
     margin-top: 2em;
-    max-height: 8em;
+    max-height: 10em;
     text-align: right;
     transition: max-height 0.5s;
   }

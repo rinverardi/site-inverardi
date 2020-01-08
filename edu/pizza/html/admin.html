@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../css/popup.css" rel="stylesheet"/>
+    <link href="../css/tony.css" rel="stylesheet"/>
+    <script src="../js/configuration.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/feedback_admin.js"></script>
+    <script src="../js/orders_admin.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/utilities.js"></script>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="The admin page for Tony's Pizza Factory">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+</head>
+<body>
+<header>
+    <h1>Tony's Admin Page</h1>
+    <nav>
+        <div id="hamburgerMenu">
+            <a href="javascript:void(0);">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <ul class="collapsed" id="hamburgerLinks">
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>How are customer rating our prices?</h2>
+        <div class="summary" id="summaryPrice"></div>
+    </section>
+
+    <section>
+        <h2>How are customer rating our pizzas?</h2>
+        <div class="summary" id="summaryTaste"></div>
+    </section>
+
+    <section>
+        <h2>Feedback History</h2>
+        <div class="history" id="feedbackHistory">
+        </div>
+    </section>
+
+    <section>
+        <h2>Order History</h2>
+        <div class="history" id="orderHistory">
+        </div>
+    </section>
+</main>
+
+<div id="popupBackground">
+  <div id="popupWindow">
+    <div id="popupWindowContent"></div>
+  </div>
+</div>
+</body>
+</html>

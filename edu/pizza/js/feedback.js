@@ -33,6 +33,36 @@ function getRadioValue(form, formField) {
   return '';
 }
 
+function submitFeedback() {
+  let form = document.forms[0];
+
+  let feedback = {
+    'pizzaRating': form['pizzaTaste'].value,
+    'prizeRating': form['pizzaPrice'].value,
+    'name': form['customerName'].value,
+    'email': form['customerEmail'].value,
+    'feedback': form['comment'].value,
+  };
+
+  let request = new XMLHttpRequest();
+
+  request.onload = () => {
+    if (request.status >= 200 && request.status < 300)
+      popup('Thank you for your feedback!');
+    else
+      request.onerror();
+  };
+
+  request.onerror = () => popup('Sorry, submitting the feedback failed.');
+  request.ontimeout = () => popup('Sorry, submitting the feedback timed out.');
+
+  request.open('POST', apiUrl + 'feedback');
+  request.setRequestHeader('Accept', 'application/json');
+  request.setRequestHeader('Authorization', apiToken);
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.send(JSON.stringify(feedback));
+}
+
 function validateFeedback(formData) {
   let validationErrors = []
 
@@ -93,3 +123,18 @@ function validateFeedbackForm() {
 
   return validationErrors.length == 0;
 }
+
+document.addEventListener('submit', (submitEvent) => {
+  submitEvent.preventDefault();
+
+  if (validateFeedbackForm())
+    submitFeedback();
+});
+
+window.addEventListener('load', () => {
+  document.querySelectorAll('.validationTarget').forEach(input => {
+    input.addEventListener('input', validateFeedbackForm);
+  });
+
+  validateFeedbackForm();
+});
