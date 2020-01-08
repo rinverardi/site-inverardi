@@ -12,7 +12,9 @@
     <script src="../js/popup.js"></script>
     <script src="../js/products.js"></script>
     <script>
-      showProducts(apiUrl + 'pizzas', mapPizza);
+        window.addEventListener(
+            'load',
+            () => showProducts(apiUrl + 'pizzas', mapPizza));
     </script>
     <title>Pizza</title>
 </head>
@@ -80,6 +82,7 @@
 <div id="popupBackground">
   <div id="popupWindow">
     <div id="popupWindowContent"></div>
+    <div id="popupWindowDetails">See the <a href="recent_orders.html">recent orders</a>.</div>
   </div>
 </div>
 </body>
