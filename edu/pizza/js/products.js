@@ -43,6 +43,7 @@ function mapPizza(product, productNode) {
 function mapSalad(product, productNode) {
   map(product, productNode);
 
+  productNode.querySelector(".productDescription").textContent = product.ingredients.join(', ');
   productNode.querySelector("input[name='type']").value = 'salad';
 }
 

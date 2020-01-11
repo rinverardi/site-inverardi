@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <books xsd:noNamespaceSchemaLocation="books.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
-<!-- Ihre Lösung hier -->
+
+    <!-- First name and last name as two separate elements. -->
+
+    <book type="hardcover">
+        <title>Moby-Dick</title>
+        <author>
+            <firstname>Herman</firstname>
+            <lastname>Melville</lastname>
+        </author>
+        <price currency="CHF">19.75</price>
+    </book>
+
+    <!-- First name and last name as a single element. -->
+
+    <book type="paperback">
+        <title>Robinson Crusoe</title>
+        <author>
+            <name>Daniel Defoe</name>
+        </author>
+        <price currency="EUR">8.50</price>
+    </book>
 </books>
 

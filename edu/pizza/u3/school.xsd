@@ -1,6 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
-	<!-- Ihre Lösung hier -->
-	<xsd:element name="School">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- Simple types -->
+
+	<xsd:simpleType name="ahvNumber">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:pattern value="\d{3}\.\d{4}\.\d{4}\.\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="cityName">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:whiteSpace value="collapse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="grade">
+		<xsd:restriction base="xsd:integer">
+			<xsd:maxInclusive value="6"/>
+			<xsd:minInclusive value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="personName">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:whiteSpace value="collapse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="streetName">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:whiteSpace value="collapse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="zipCode">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:whiteSpace value="collapse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Attributes -->
+
+	<xsd:attribute name="gender">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="f"/>
+				<xsd:enumeration value="m"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+	<xsd:attribute name="module" type="xsd:ID"/>
+
+	<!-- Elements -->
+
+	<xsd:element name="Department">
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		</xsd:complexType>
 	</xsd:element>
+
+	<xsd:element name="Departments">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="Department"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Exam">
+		<xsd:complexType>
+			<xsd:attribute name="module" type="xsd:IDREF" use="required"/>
+			<xsd:attribute name="date" type="xsd:date" use="required"/>
+			<xsd:attribute name="grade" type="grade"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Exams">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="Exam"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Lecturer">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="person"/>
+			</xsd:sequence>
+			<xsd:attribute ref="gender" use="required"/>
+			<xsd:attribute name="modules" type="xsd:IDREFS" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Lecturers">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="Lecturer"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Module">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ModuleName"/>
+			</xsd:sequence>
+			<xsd:attribute name="code" type="xsd:ID" use="required"/>
+			<xsd:attribute name="departments" type="xsd:IDREFS" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Modules">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="Module"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="ModuleName">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="1"/>
+				<xsd:whiteSpace value="collapse"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="School">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Departments"/>
+				<xsd:element ref="Modules"/>
+				<xsd:element ref="Lecturers"/>
+				<xsd:element ref="Students"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Student">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="person"/>
+				<xsd:element minOccurs="0" ref="Exams"/>
+			</xsd:sequence>
+			<xsd:attribute ref="gender" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Students">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="Student"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- Groups -->
+
+	<xsd:group name="person">
+		<xsd:sequence>
+			<xsd:element name="LastName" type="personName"/>
+			<xsd:element maxOccurs="unbounded" name="FirstName" type="personName"/>
+			<xsd:element name="Street" type="streetName"/>
+			<xsd:element name="ZIP" type="zipCode"/>
+			<xsd:element name="City" type="cityName"/>
+			<xsd:element name="AHVNumber" type="ahvNumber"/>
+			<xsd:element name="BirthDate" type="xsd:date"/>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>
