@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function navigate(screen) {
+        let element = document.getElementById(screen)
+
+        if (element) {
+          Array.from(document.getElementsByTagName("div")).forEach((element) => {
+            element.style.display = "none";
+          });
+
+          element.style.display = "block";
+        } else
+          alert("No such screen: " + screen);
+      }
+
+      window.addEventListener("load", (event) => {
+        navigate("application")
+        // navigate("step_2" /* XXX "application" */)
+      });
+    </script>
+    <title>Speicherassistent</title>
+  </head>
+  <body>
+    <span>
+      <div id="application">
+        <img
+          src="figures/sketches/application.jpg"
+          usemap="#application_map">
+
+        <map name="application_map">
+          <area
+            class="area"
+            coords="60,320,275,345"
+            href="javascript:navigate('step_1')"
+            shape="rect">
+        </map>
+      </div>
+
+      <div id="profile_manager">
+        <img
+          src="figures/sketches/profile_manager.jpg"
+          usemap="#profile_manager_map">
+
+        <map name="profile_manager_map">
+          <!-- XXX -->
+        </map>
+      </div>
+
+      <div id="step_1">
+        <img
+          src="figures/sketches/step_1.jpg"
+          usemap="#step_1_map">
+
+        <map name="step_1_map">
+          <area
+            class="area"
+            coords="505,105,580,180"
+            href="javascript:navigate('profile_selector')"
+            shape="rect">
+
+          <area
+            class="area"
+            coords="150,200,390,235"
+            href="javascript:navigate('profile_manager')"
+            shape="rect">
+
+          <area
+            class="area"
+            coords="415,245,580,320"
+            href="javascript:navigate('step_2')"
+            shape="rect">
+        </map>
+      </div>
+
+      <div id="step_2">
+        <img
+          src="figures/sketches/step_2.jpg"
+          usemap="#step_2_map">
+
+        <map name="step_2_map">
+          <area
+            class="area"
+            coords="290,105,835,180"
+            href="javascript:navigate('image_directory_locator')"
+            shape="rect">
+
+          <area
+            class="area"
+            coords="290,195,835,270"
+            href="javascript:navigate('image_file_locator')"
+            shape="rect">
+
+          <area
+            class="area"
+            coords="785,360,815,390"
+            href="javascript:navigate('image_file_locator')"
+            shape="rect">
+        </map>
+      </div>
+    </span>
+  </body>
+</html>
