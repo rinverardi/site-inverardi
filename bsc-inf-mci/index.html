@@ -4,27 +4,14 @@
   <head>
     <meta charset="utf-8">
     <script>
-      function announce(announcement) {
-        Array.from(document.getElementsByTagName("p")).forEach((that) => {
-          that.textContent = announcement
-        });
-      }
-
       function navigate() {
         Array.from(document.getElementsByTagName("div")).forEach((that) => {
           that.style.display = "none";
         });
 
-        let screenId = window.location.hash.substr(1);
-        let screen = document.getElementById(screenId);
+        let screen = document.getElementById(window.location.hash.substr(1));
 
-        if (screen) {
-          screen.style.display = "block";
-
-          announce(null);
-        } else {
-          announce("Not implemented");
-        }
+        screen.style.display = "block";
       }
 
       window.addEventListener("hashchange", event => {
@@ -49,18 +36,11 @@
       img {
         box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 20px;
       }
-
-      p {
-        color: #fff;
-        font-weight: bold;
-      }
     </style>
     <title>Speicherassistent</title>
   </head>
   <body>
     <span>
-      <p></p>
-
       <div id="application">
         <img src="figures/sketches/application.jpg" usemap="#application_map">
         <map name="application_map">
