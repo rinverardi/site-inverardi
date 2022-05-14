@@ -44,14 +44,14 @@
       <div id="application">
         <img src="figures/sketches/application.jpg" usemap="#application_map">
         <map name="application_map">
-          <area class="area" coords="60,320,275,345" href="#step_1" shape="rect">
+          <area class="area" coords="60,320,275,345" href="#step_1_item_1" shape="rect">
         </map>
       </div>
 
       <div id="profile_editor">
         <img src="figures/sketches/profile_editor.jpg" usemap="#profile_editor_map">
         <map name="profile_editor_map">
-          <area coords="675,625,815,700" href="#profile_manager" shape="rect">
+          <area coords="675,625,815,700" href="javascript:history.back()" shape="rect">
         </map>
       </div>
 
@@ -59,15 +59,33 @@
         <img src="figures/sketches/profile_manager.jpg" usemap="#profile_manager_map">
         <map name="profile_manager_map">
           <area coords="35,390,360,420" href="#profile_editor" shape="rect">
-          <area coords="530,435,675,510" href="#step_1" shape="rect">
+          <area coords="530,435,675,510" href="javascript:history.back()" shape="rect">
         </map>
       </div>
 
-      <div id="step_1">
-        <img src="figures/sketches/step_1.jpg" usemap="#step_1_map">
-        <map name="step_1_map">
+      <div id="step_1_item_1">
+        <img src="figures/sketches/step_1_item_1.jpg" usemap="#step_1_item_1_map">
+        <map name="step_1_item_1_map">
+          <area coords="150,110,580,185" href="#step_1_items" shape="rect">
           <area coords="150,200,390,235" href="#profile_manager" shape="rect">
           <area coords="415,245,580,320" href="#step_2" shape="rect">
+        </map>
+      </div>
+
+      <div id="step_1_item_2">
+        <img src="figures/sketches/step_1_item_2.jpg" usemap="#step_1_item_2_map">
+        <map name="step_1_item_2_map">
+          <area coords="150,110,580,185" href="#step_1_items" shape="rect">
+          <area coords="150,200,390,235" href="#profile_manager" shape="rect">
+          <area coords="415,245,580,320" href="#step_2" shape="rect">
+        </map>
+      </div>
+
+      <div id="step_1_items">
+        <img src="figures/sketches/step_1_items.jpg" usemap="#step_1_items">
+        <map name="step_1_items">
+          <area coords="175,200,430,230" href="#step_1_item_1" shape="rect">
+          <area coords="175,250,470,280" href="#step_1_item_2" shape="rect">
         </map>
       </div>
 
@@ -82,10 +100,17 @@
         </map>
       </div>
 
+      <div id="success">
+        <img src="figures/sketches/success.jpg" usemap="#success_map">
+        <map name="success_map">
+          <area coords="35,35,110,110" href="#application" shape="rect">
+        </map>
+      </div>
+
       <div id="warning">
         <img src="figures/sketches/warning.jpg" usemap="#warning_map">
         <map name="warning_map">
-          <area coords="270,245,555,320" href="#application" shape="rect">
+          <area coords="270,245,555,320" href="#success" shape="rect">
         </map>
       </div>
     </span>
