@@ -68,6 +68,17 @@ h2 {
   text-align: center;
 }
 
+.map {
+  background-image: url(../images/map.svg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .redacted-image {
   background-image: url(../images/redacted.svg);
   background-position: center;
