@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1 1">
+  <g stroke-width="1px">
+    <g stroke="#ccc">
+      <line x1="0" x2="1" y1="0" y2="1" vector-effect="non-scaling-stroke"/>
+      <line x1="1" y1="0" x2="0" y2="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <rect fill="none" stroke="#880" stroke-width="4px" x="0" y="0" width="1" height="1" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>
