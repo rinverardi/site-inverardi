@@ -1,0 +1,17 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [{
+    "sizes": "192x192",
+    "src": "https://s100.divarcdn.com/static/thewall-assets/android-chrome-192x192.png",
+    "type": "image/png"
+  },
+  {
+    "sizes": "512x512",
+    "src": "https://s100.divarcdn.com/static/thewall-assets/android-chrome-512x512.png",
+    "type": "image/png"
+  }],
+  "name": "Empire",
+  "orientation": "natural",
+  "theme_color": "#ffffff"
+}
