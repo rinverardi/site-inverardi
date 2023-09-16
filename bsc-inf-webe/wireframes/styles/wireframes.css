@@ -24,11 +24,59 @@ a:hover {
 }
 
 body.in-game {
-  background: #000;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 body.pre-game {
   padding: 1em 0;
+}
+
+.hex {
+  background-image: url('../images/hex.svg');
+  clip-path: polygon(0 50%, 30% 0, 70% 0, 100% 50%, 70% 100%, 30% 100%);
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 60px;
+  position: relative;
+  width: 80px;
+}
+
+.hex + .hex {
+  margin-left: 40px;
+}
+
+.hex.void {
+  background-image: url('../images/hex-void.svg');
+}
+
+.hex-row {
+  display: flex;
+}
+
+.hex-row + .hex-row {
+  margin-top: -27px;
+}
+
+.hex-row:nth-of-type(2n - 1) {
+  margin-left: 60px;
+}
+
+.map {
+  margin: auto auto;
+}
+
+.player {
+  background-image: url('../images/player.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
 }
 
 .square {
