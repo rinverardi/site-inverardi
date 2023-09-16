@@ -23,34 +23,38 @@ a:hover {
   text-decoration: underline;
 }
 
-body {
+body.in-game {
+  background: #000;
+}
+
+body.pre-game {
   padding: 1em 0;
 }
 
-.framed {
-  background-image: url(../images/framed.svg);
+.square {
+  background-image: url(../images/square.svg);
   background-size: 100% 100%;
   padding: 0.25em 0.5em;
 }
 
-.framed.can-click {
-  background-image: url(../images/framed-blue.svg);
+.square.can-click {
+  background-image: url(../images/square-blue.svg);
   cursor: pointer;
 }
 
-.framed.can-edit {
-  background-image: url(../images/framed-green.svg);
+.square.can-edit {
+  background-image: url(../images/square-green.svg);
   cursor: text;
 }
 
-.framed.can-expand {
-  background-image: url(../images/framed-green.svg);
+.square.can-expand {
+  background-image: url(../images/square-green.svg);
   cursor: pointer;
   position: relative;
   padding-right: 1.5em;
 }
 
-.framed.can-expand::after {
+.square.can-expand::after {
   content: '▾';
   position: absolute;
   right: 0.5em;
@@ -66,17 +70,6 @@ h1 {
 h2 {
   padding: 0.5em 0;
   text-align: center;
-}
-
-.map {
-  background-image: url(../images/map.svg);
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .redacted-image {

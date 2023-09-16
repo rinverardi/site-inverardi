@@ -3,13 +3,113 @@
 <html lang="de">
   <head>
     <link rel="stylesheet" href="lib/bootstrap-5.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/wireframe.css">
+    <link rel="stylesheet" href="styles/wireframes.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Empire</title>
   </head>
-  <body>
-    <div class="map"></div>
+  <body class="in-game">
+
+<style>
+.hex {
+  background-color: #aaa;
+  background-image: url('images/hex.svg');
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0 50%, 30% 0, 70% 0, 100% 50%, 70% 100%, 30% 100%);
+  float: left;
+  height: 60px;
+  cursor: pointer;
+  margin-bottom: -30px;
+  margin-right: 32px;
+  width: 80px;
+}
+
+.hex:last-child {
+  margin-right: 0;
+}
+
+.hex.void {
+  background-color: #000;
+}
+
+.hex-row {
+  clear: left;
+}
+
+.hex-row.even {
+  clear: left;
+  margin-left: 56px;
+}
+
+.map {
+  background: orange;
+  margin: auto;
+  height: 800px;
+  width: 864px;
+}
+
+</style>
+
+    <div class="map">
+      <div class="hex-row even">
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+        <div class="hex"></div>
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+      </div>
+
+      <div class="hex-row">
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+        <div class="hex"></div>
+        <div class="hex"></div>
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+      </div>
+
+      <div class="hex-row even">
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+        <div class="hex"></div>
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+      </div>
+
+      <div class="hex-row">
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+        <div class="hex"></div>
+        <div class="hex"></div>
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+      </div>
+
+      <div class="hex-row even">
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+        <div class="hex"></div>
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+
+        <div class="hex void"></div>
+        <div class="hex void"></div>
+      </div>
+    </div>
+
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
