@@ -51,8 +51,74 @@ a:hover {
   white-space: nowrap;
 }
 
+.area {
+  background-image: url(../images/area.svg);
+  background-size: 100% 100%;
+  padding: 0.25em 0.5em;
+}
+
 body {
   padding: 1em;
+}
+
+.control {
+  background-image: url(../images/control-inactive.svg);
+  background-size: 100% 100%;
+  padding: 0.25em 0.5em;
+}
+
+.control.active {
+  background-image: url(../images/control-active.svg);
+}
+
+.control.can-check {
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5em;
+}
+
+.control.can-check::after {
+  content: '☐';
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.control.can-click {
+  cursor: pointer;
+}
+
+.control.can-edit {
+  cursor: text;
+}
+
+.control.can-expand {
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5em;
+}
+
+.control.can-expand::after {
+  content: '▾';
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.control.can-uncheck {
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5em;
+}
+
+.control.can-uncheck::after {
+  content: '☑';
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hex {
@@ -109,6 +175,21 @@ h2 {
   top: 0em;
 }
 
+.popup {
+  background: white;
+  margin: auto auto;
+  padding: 0.5em;
+}
+
+.popup-holder {
+  bottom: 0em;
+  display: flex;
+  left: 0em;
+  position: absolute;
+  right: 0em;
+  top: 0em;
+}
+
 .redacted-image {
   background-image: url(../images/redacted.svg);
   background-position: center;
@@ -119,33 +200,13 @@ h2 {
   font-family: 'Redacted';
 }
 
-.square {
-  background-image: url(../images/square.svg);
-  background-size: 100% 100%;
-  padding: 0.25em 0.5em;
-}
-
-.square.can-click {
-  background-image: url(../images/square-blue.svg);
-  cursor: pointer;
-}
-
-.square.can-edit {
-  background-image: url(../images/square-green.svg);
-  cursor: text;
-}
-
-.square.can-expand {
-  background-image: url(../images/square-green.svg);
-  cursor: pointer;
-  position: relative;
-  padding-right: 1.5em;
-}
-
-.square.can-expand::after {
-  content: '▾';
+.shadow {
+  background: #000;
+  bottom: 0em;
+  left: 0em;
+  opacity: 0.2;
   position: absolute;
-  right: 0.5em;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0em;
+  top: 0em;
 }
+

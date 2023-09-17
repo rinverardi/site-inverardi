@@ -2,6 +2,7 @@
 
 <html lang="de">
   <head>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/wireframes.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -63,14 +64,31 @@
         </div>
       </div>
     </div>
-    <div class="absolute-nw control">Inventory</div>
-    <div class="absolute-sw control">Scores</div>
-    <a href="map_with_menu.html">
-      <div class="absolute-ne active can-click control">Menu</div>
-    </a>
-    <a href="map_with_chat.html">
-      <div class="absolute-se active can-click control">Chat</div>
-    </a>
+    <div class="shadow"></div>
+    <div class="popup-holder">
+      <div class="popup">
+        <div class="row">
+          <div class="col-12">
+            <div class="can-check control">Dark mode</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-2">
+            <a href="map.html">
+              <div class="active can-click control">Resume game</div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-2">
+            <a href="index.html">
+              <div class="active can-click control">Quit game</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/wireframes.js"></script>
   </body>
 </html>
