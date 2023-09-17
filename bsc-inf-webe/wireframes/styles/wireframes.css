@@ -23,6 +23,34 @@ a:hover {
   text-decoration: underline;
 }
 
+.absolute-ne {
+  position: absolute;
+  right: 0em;
+  top: 0em;
+  white-space: nowrap;
+}
+
+.absolute-nw {
+  position: absolute;
+  left: 0em;
+  top: 0em;
+  white-space: nowrap;
+}
+
+.absolute-se {
+  bottom: 0em;
+  position: absolute;
+  right: 0em;
+  white-space: nowrap;
+}
+
+.absolute-sw {
+  bottom: 0em;
+  left: 0em;
+  position: absolute;
+  white-space: nowrap;
+}
+
 body {
   padding: 1em;
 }
@@ -57,37 +85,6 @@ body {
   margin-left: 60px;
 }
 
-.square {
-  background-image: url(../images/square.svg);
-  background-size: 100% 100%;
-  padding: 0.25em 0.5em;
-}
-
-.square.can-click {
-  background-image: url(../images/square-blue.svg);
-  cursor: pointer;
-}
-
-.square.can-edit {
-  background-image: url(../images/square-green.svg);
-  cursor: text;
-}
-
-.square.can-expand {
-  background-image: url(../images/square-green.svg);
-  cursor: pointer;
-  position: relative;
-  padding-right: 1.5em;
-}
-
-.square.can-expand::after {
-  content: '▾';
-  position: absolute;
-  right: 0.5em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 h1 {
   padding: 1em 0;
   text-align: center;
@@ -120,4 +117,35 @@ h2 {
 
 .redacted-text {
   font-family: 'Redacted';
+}
+
+.square {
+  background-image: url(../images/square.svg);
+  background-size: 100% 100%;
+  padding: 0.25em 0.5em;
+}
+
+.square.can-click {
+  background-image: url(../images/square-blue.svg);
+  cursor: pointer;
+}
+
+.square.can-edit {
+  background-image: url(../images/square-green.svg);
+  cursor: text;
+}
+
+.square.can-expand {
+  background-image: url(../images/square-green.svg);
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5em;
+}
+
+.square.can-expand::after {
+  content: '▾';
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
 }
