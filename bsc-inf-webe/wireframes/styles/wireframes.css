@@ -23,17 +23,8 @@ a:hover {
   text-decoration: underline;
 }
 
-body.in-game {
-  bottom: 0;
-  display: flex;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-body.pre-game {
-  padding: 1em 0;
+body {
+  padding: 1em;
 }
 
 .hex {
@@ -64,19 +55,6 @@ body.pre-game {
 
 .hex-row:nth-of-type(2n - 1) {
   margin-left: 60px;
-}
-
-.map {
-  margin: auto auto;
-}
-
-.player {
-  background-image: url('../images/player.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100%;
-  width: 100%;
 }
 
 .square {
@@ -118,6 +96,20 @@ h1 {
 h2 {
   padding: 0.5em 0;
   text-align: center;
+}
+
+.map {
+  margin: auto auto;
+}
+
+.map-holder {
+  bottom: 0em;
+  display: flex;
+  left: 0em;
+  overflow: scroll;
+  position: absolute;
+  right: 0em;
+  top: 0em;
 }
 
 .redacted-image {
