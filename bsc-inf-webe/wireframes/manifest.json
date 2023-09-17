@@ -2,13 +2,8 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "icons": [{
-    "sizes": "192x192",
-    "src": "https://s100.divarcdn.com/static/thewall-assets/android-chrome-192x192.png",
-    "type": "image/png"
-  },
-  {
     "sizes": "512x512",
-    "src": "https://s100.divarcdn.com/static/thewall-assets/android-chrome-512x512.png",
+    "src": "https://www.inverardi.ch/bsc-inf-webe/wireframes/images/player.png",
     "type": "image/png"
   }],
   "name": "Empire",
