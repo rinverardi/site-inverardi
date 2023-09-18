@@ -2,6 +2,7 @@
 
 <html lang="de">
   <head>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/wireframes.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -63,23 +64,61 @@
         </div>
       </div>
     </div>
-    <a href="build.html">
-      <div class="absolute-nw active can-click control">
-        🧪️×7<br>
-        🍎️×9<br>
-        🪙️×15<br>
-        🗡️×8
+    <div class="shadow"></div>
+    <div class="popup-holder">
+      <div class="popup">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="area can-click control">
+                Build Factory
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="area">
+                🧪️×8
+                🪙️×8
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-sm-6">
+              <div class="area can-click control">
+                Build Village
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="area">
+                🍎️×2
+                🪙️×5
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-sm-6">
+              <div class="area unavailable">
+                Expand Village to City
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="area">
+                <span class="unavailable">🧪️×8</span>
+                🍎️×12
+                🪙️×8
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12">
+              <a href="map.html">
+                <div class="active can-click control">Resume game</div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </a>
-    <a href="show_scores.html">
-      <div class="absolute-sw active can-click control">Scores</div>
-    </a>
-    <a href="show_menu.html">
-      <div class="absolute-ne active can-click control">Menu</div>
-    </a>
-    <a href="chat.html">
-      <div class="absolute-se active can-click control">Chat</div>
-    </a>
+    </div>
+    <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/wireframes.js"></script>
   </body>
 </html>
