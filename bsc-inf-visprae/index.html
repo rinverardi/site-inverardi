@@ -24,43 +24,24 @@
             src: url(fonts/quicksand.woff2) format('woff2');
         }
 
-        .actor {
-            width: 3em;
-        }
-
-        .align-left {
-            text-align: left;
-        }
-
-        .align-right {
-            text-align: right;
-        }
-
-        .analog::after {
+        .stamp {
             background: black;
-            border-radius: 0.5em;
+            border-radius: 0 0 10px 10px;
             color: white;
-            content: 'analog';
-            padding: 0.5em 1em;
+            left: 50%;
+            opacity: 0;
+            padding: 10px 20px;
             position: absolute;
-            left: 5%;
-            top: 5%;
-            transform: rotate(-20deg);
+            text-transform: uppercase;
+            top: 0;
+            transform: translateX(-50%);
+            transition-duration: 1s;
+            transition-property: opacity;
+            z-index: 2;
         }
 
-        .game-player {
-            padding: 0 0.5em;
-            width: 3.5em;
-        }
-
-        .game-resource {
-            padding: 0 0.5em;
-            width: 2.5em;
-        }
-
-        .game-tile {
-            padding: 0 0.5em;
-            width: 5em;
+        .stamp.visible {
+            opacity: 1;
         }
 
         .reveal {
@@ -77,9 +58,13 @@
             text-transform: none;
         }
 
-        .usecase {
-            padding: 0 0.5em;
-            width: 7em;
+        .reveal img.sticker {
+            margin: 10px;
+        }
+
+        .secret {
+            background: url(images/secret.svg);
+            background-size: 100% 100%;
         }
     </style>
 
@@ -87,10 +72,13 @@
 </head>
 
 <body>
+    <div class="stamp" id="on-flipchart">auf Flipchart</div>
+    <div class="stamp" id="on-whiteboard">auf Whiteboard</div>
+
     <div class="reveal">
         <div class="slides">
             <section>
-                <img src="images/titel.svg">
+                <img src="images/title.svg">
                 <h3>
                     <div>
                         Entwicklung eines Multiplayer-Spiels
@@ -132,14 +120,17 @@
                         Protokolle und Schnittstellen
                     </li>
                     <li class="fragment">
+                        Probleme und Lösungsansätze
+                    </li>
+                    <li class="fragment">
                         Umsetzung und Demonstration
                     </li>
                     <li class="fragment">
-                        Retrospektive und Fazit
+                        Zusammenfassung und Fazit
                     </li>
                 </ul>
                 <div>
-                    <img src="helpers/fahrplan.svg">
+                    <img src="helpers/schedule.svg">
                 </div>
             </section>
 
@@ -161,7 +152,7 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="on-whiteboard">
                 <div class="r-stretch">
                     <img src="stickers/revenue-music.svg">
                     &nbsp;
@@ -169,20 +160,19 @@
                     &nbsp;
                     <img class="fragment" src="stickers/revenue-games.svg">
                 </div>
-                <div class="analog"></div>
             </section>
 
             <section>
                 <h3>Randbedingungen</h3>
                 <div>
-                    <img src="helpers/randbedingungen.svg">
+                    <img src="helpers/conditions.svg">
                 </div>
                 <ul>
                     <li class="fragment">
                         Spiel: mehrere Spieler und rundenbasiert
                     </li>
                     <li class="fragment">
-                        Software-Architektur: Client-Server
+                        Architektur: Client-Server
                     </li>
                     <li class="fragment">
                         Programmiersprache: JavaScript bzw. TypeScript
@@ -202,7 +192,7 @@
             <section>
                 <h3>Projektziele</h3>
                 <div>
-                    <img src="helpers/projektziele.svg">
+                    <img src="helpers/project-goals.svg">
                 </div>
                 <ul>
                     <li class="fragment">
@@ -223,7 +213,7 @@
             <section>
                 <h3>Projektplanung</h3>
                 <div>
-                    <img src="helpers/projektplanung.svg">
+                    <img src="helpers/project-plan.svg">
                 </div>
                 <ul>
                     <li class="fragment">
@@ -240,7 +230,7 @@
 
             <section>
                 <div>
-                    <img src="helpers/spielidee.svg">
+                    <img src="helpers/game-idea.svg">
                 </div>
                 <h3>Spielidee</h3>
                 <div>
@@ -273,23 +263,25 @@
                 </ul>
             </section>
 
-            <section>
-                <div class="analog"></div>
+            <section class="on-whiteboard">
+                <div class="stamp">analog</div>
                 <div>
-                    <img class="game-player" src="stickers/player.svg">
+                    <img class="sticker" src="stickers/player.svg">
                 </div>
                 <div>
-                    <img class="game-resource" src="stickers/resource-food.svg">
-                    <img class="game-resource" src="stickers/resource-gold.svg">
-                    <img class="game-resource" src="stickers/resource-research.svg">
-                    <img class="game-resource" src="stickers/resource-weaponry.svg">
+                    <img class="sticker" src="stickers/resource-food.svg">
+                    <img class="sticker" src="stickers/resource-gold.svg">
+                    <img class="sticker" src="stickers/resource-research.svg">
+                    <img class="sticker" src="stickers/resource-weaponry.svg">
                 </div>
                 <div>
-                    <img class="game-tile" src="stickers/tile-forest.svg">
-                    <img class="game-tile" src="stickers/tile-grass.svg">
-                    <img class="game-tile" src="stickers/tile-hill.svg">
-                    <img class="game-tile" src="stickers/tile-mountain.svg">
-                    <img class="game-tile" src="stickers/tile-water.svg">
+                    <img class="sticker" src="stickers/tile-forest.svg">
+                    <img class="sticker" src="stickers/tile-grass.svg">
+                    <img class="sticker" src="stickers/tile-hill.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/tile-mountain.svg">
+                    <img class="sticker" src="stickers/tile-water.svg">
                 </div>
             </section>
 
@@ -297,46 +289,46 @@
                 <h3>Anwendungsfälle</h3>
             </section>
 
-            <section>
-                <div class="analog"></div>
+            <section class="on-flipchart">
+                <div class="stamp">analog</div>
                 <div>
-                    <img class="actor" src="stickers/player.svg">
+                    <img class="sticker" src="stickers/player.svg">
                 </div>
                 <div>
-                    <img class="usecase" src="stickers/usecase-1.svg">
-                    <img class="usecase" src="stickers/usecase-4.svg">
-                    <img class="usecase" src="stickers/usecase-3.svg">
+                    <img class="sticker" src="stickers/usecase-1.svg">
+                    <img class="sticker" src="stickers/usecase-4.svg">
+                    <img class="sticker" src="stickers/usecase-3.svg">
                 </div>
                 <div>
-                    <img class="usecase" src="stickers/usecase-5.svg">
-                    <img class="usecase" src="stickers/usecase-2.svg">
+                    <img class="sticker" src="stickers/usecase-5.svg">
+                    <img class="sticker" src="stickers/usecase-2.svg">
                 </div>
                 <div>
-                    <img class="usecase" src="stickers/usecase-6.svg">
-                    <img class="usecase" src="stickers/usecase-7.svg">
+                    <img class="sticker" src="stickers/usecase-6.svg">
+                    <img class="sticker" src="stickers/usecase-7.svg">
                 </div>
             </section>
 
-            <section>
-                <div class="analog"></div>
+            <section class="on-flipchart">
+                <div class="stamp">analog</div>
                 <div>
-                    <img class="usecase" src="stickers/usecase-8.svg">
-                    <img class="usecase" src="stickers/usecase-9.svg">
+                    <img class="sticker" src="stickers/usecase-8.svg">
+                    <img class="sticker" src="stickers/usecase-9.svg">
                 </div>
                 <div>
-                    <img class="usecase" src="stickers/usecase-10.svg">
-                    <img class="usecase" src="stickers/usecase-11.svg">
-                    <img class="usecase" src="stickers/usecase-12.svg">
+                    <img class="sticker" src="stickers/usecase-10.svg">
+                    <img class="sticker" src="stickers/usecase-11.svg">
+                    <img class="sticker" src="stickers/usecase-12.svg">
                 </div>
                 <div>
-                    <img class="usecase" src="stickers/usecase-13.svg">
-                    <img class="usecase" src="stickers/usecase-14.svg">
-                    <img class="usecase" src="stickers/usecase-15.svg">
+                    <img class="sticker" src="stickers/usecase-13.svg">
+                    <img class="sticker" src="stickers/usecase-14.svg">
+                    <img class="sticker" src="stickers/usecase-15.svg">
                 </div>
                 <div>
-                    <img class="usecase" src="stickers/usecase-16.svg">
-                    <img class="usecase" src="stickers/usecase-17.svg">
-                    <img class="usecase" src="stickers/usecase-18.svg">
+                    <img class="sticker" src="stickers/usecase-16.svg">
+                    <img class="sticker" src="stickers/usecase-17.svg">
+                    <img class="sticker" src="stickers/usecase-18.svg">
                 </div>
             </section>
 
@@ -344,45 +336,191 @@
                 <h3>Anforderungen</h3>
                 <ul>
                     <li class="fragment">
-                        breite Unterstützung
-                        <p class="fragment">
+                        <u>breite Unterstützung</u>
+                        <p>
                             unterschiedliche Hardware
                             <br>
-                            <span class="fragment">unterschiedliche Software</span>
+                            unterschiedliche Software
                             <br>
-                            <span class="fragment">menschliche Faktoren</span>
+                            menschliche Faktoren
                         </p>
                     </li>
                     <li class="fragment">
-                        effiziente Umsetzung
-                        <p class="fragment">
+                        <u>effiziente Umsetzung</u>
+                        <p>
                             tiefe Antwortzeiten
                             <br>
-                            <span class="fragment">trotz vieler Partien</span>
+                            trotz vieler Partien
                             <br>
-                            <span class="fragment">trotz vieler Spieler</span>
+                            trotz vieler Spieler
                         </p>
                     </li>
                 </ul>
                 <div>
-                    <img src="helpers/anforderungen.svg">
+                    <img src="helpers/requirements.svg">
                 </div>
             </section>
 
             <section>
-                <h3>Architektur</h3>
+                <h3>Module und Komponenten</h3>
+            </section>
+
+            <section class="on-flipchart">
+                <div class="stamp">analog</div>
+                <div>
+                    <img class="package" src="stickers/package-frontend.svg">
+                <div>
+                </div>
+                    <img class="package" src="stickers/package-backend.svg">
+                <div>
+                </div>
+                    <img class="package" src="stickers/package-persistenz.svg">
+                </div>
+            </section>
+
+            <section class="on-flipchart">
+                <div class="stamp">analog</div>
+                <div>
+                    <img class="application" src="stickers/application.svg">
+                    <img class="interface" src="stickers/interface-http.svg">
+                </div>
+                <div>
+                    <img class="application" src="stickers/service-node.svg">
+                    <img class="interface" src="stickers/interface-redis.svg">
+                </div>
+                <div>
+                    <img class="application" src="stickers/service-node.svg">
+                    <img class="interface" src="stickers/interface-websocket.svg">
+                </div>
+                <div>
+                    <img class="application" src="stickers/filesystem.svg">
+                    <img class="application" src="stickers/database.svg">
+                <div>
             </section>
 
             <section>
-                <h3>Protokolle</h3>
+                <h3>Protokolle und Schnittstellen</h3>
+                <ul>
+                    <li class="fragment">
+                        <u>statische Inhalte über HTTP/S</u>
+                        <p>
+                            Bilddateien
+                            <br>
+                            Textdateien
+                            <br>
+                            usw.
+                        </p>
+                    </li>
+                    <li class="fragment">
+                        <u>dynamische Inhalte über WebSockets</u>
+                        <p>
+                            Spielzustände
+                            <br>
+                            Spielzüge
+                            <br>
+                            usw.
+                        </p>
+                    </li>
+                </ul>
+                <div>
+                    <img src="helpers/protocols.svg">
+                </div>
             </section>
 
             <section>
-                <h3>Schnittstellen</h3>
+                <section>
+                    <h3>Probleme und Lösungsansätze</h3>
+                </section>
+                <section>
+                    <div>
+                        <p>
+                            <b>Problem: Logik zwischen Client und Server aufteilen</b>
+                        <p>
+                        <p>
+                            betrügerische Aktionen vermeiden
+                            <br>
+                            doppelte Logik minimieren
+                            <br>
+                            unnötige Anfrage minimieren
+                        </p>
+                    </div>
+                    <div class="fragment">
+                        <p>
+                            <b>Lösung: alle Verantwortung dem Server übertragen</b>
+                        </p>
+                        <p>
+                            kompletten Spielstand vor jedem Spielzug übermitteln
+                            <br>
+                            mit allen sichtbaren Objekten
+                            <br>
+                            mit allen erlaubten Aktionen
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <p>
+                            <b>Problem: Redundanter Code im Client und im Server</b>
+                        <p>
+                        <p>
+                            erhöht die Fehlerwahrscheinlichkeit
+                            <br>
+                            erhöht den Wartungsaufwand
+                        </p>
+                    </div>
+                    <div class="fragment">
+                        <p>
+                            <b>Lösung: Client-Code im Server-Code einbinden</b>
+                        </p>
+                        <p>
+                            gleiche Programmiersprache
+                            <br>
+                            einfaches Einbinden mit relativen Pfaden
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <p>
+                            <b>Problem: HTML-Elemente sind keine Hexagone</b>
+                        <p>
+                        <p>
+                            Alternative: Canvas
+                            <br>
+                            Alternative: Elemente mit transparentem Hintergrund
+                        </p>
+                    </div>
+                    <div class="fragment">
+                        <p>
+                            <b>Lösung: HTML-Elemente zuschneiden</b>
+                        </p>
+                        <p>
+                            Event-Funktionalität geschenkt
+                            <br>
+                            Scroll-Funktionalität geschenkt
+                            <br>
+                            einfacheres Debugging
+                        </p>
+                    </div>
+                </section>
             </section>
 
             <section>
                 <h3>Umsetzung</h3>
+                <ol>
+                    <li>
+                        interaktive <a href="https://www.inverardi.ch/bsc-inf-webe/wireframes/" target="_blank">Wireframes</a> als Ausgangspunkt
+                    </li>
+                    <li>
+                        kontinuierliches Verfeinern der Benutzerschnittstelle
+                    </li>
+                    <li>
+                        kontinuierliches Verfeinern des Verhaltens
+                    </li>
+                    <li>
+                        regelmässige Testpartien mit Familie und Freunden
+                    </li>
+                </ol>
             </section>
 
             <section>
@@ -391,16 +529,32 @@
                     <img src="images/demonstration.svg">
                 </div>
                 <div>
-                    <a href="https://empire.i7i.ch">https://empire.i7i.ch</a>
+                    <a href="https://empire.i7i.ch" target="_blank">https://empire.i7i.ch</a>
                 </div>
             </section>
 
             <section>
-                <h3>Retrospektive</h3>
-            </section>
-
-            <section>
-                <h3>Fazit</h3>
+                <h3>Retrospektive und Fazit</h3>
+                <ul>
+                    <li class="fragment">
+                        Ambitionen waren hoch.
+                    </li>
+                    <li class="fragment">
+                        Browser-Kompatibilität war kein Thema.
+                    </li>
+                    <li class="fragment">
+                        Technologie-Wahl erforderte Kompromisse.
+                    <li class="fragment">
+                        Game-Development ist befriedigend.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist kreativ.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist lehrreich.
+                    </li>
+                    </li>
+                </ul>
             </section>
 
             <section>
@@ -415,7 +569,24 @@
     <script src="reveal/reveal.js"></script>
 
     <script>
+        function setVisible(classes, id) {
+            const element = document.getElementById(id);
+
+            if (classes.contains(id)) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        }
+
         Reveal.initialize({hash: true, plugins: []});
+
+        Reveal.on('slidechanged', event => {
+            const classes = event.currentSlide.classList;
+
+            setVisible(classes, 'on-flipchart');
+            setVisible(classes, 'on-whiteboard');
+        });
     </script>
 </body>
 
