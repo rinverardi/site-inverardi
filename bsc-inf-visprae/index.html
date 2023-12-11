@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="reveal/dist/reset.css">
+    <link rel="stylesheet" href="reveal/dist/reveal.css">
+    <link rel="stylesheet" href="reveal/dist/theme/white.css">
+    <link rel="stylesheet" href="reveal/plugin/highlight/monokai.css">
+
+    <meta charset="utf-8">
+
+    <style>
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            src: url(fonts/quicksand.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 700;
+            src: url(fonts/quicksand.woff2) format('woff2');
+        }
+
+        .actor {
+            width: 3em;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .analog::after {
+            background: black;
+            border-radius: 0.5em;
+            color: white;
+            content: 'analog';
+            padding: 0.5em 1em;
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            transform: rotate(-20deg);
+        }
+
+        .game-player {
+            padding: 0 0.5em;
+            width: 3.5em;
+        }
+
+        .game-resource {
+            padding: 0 0.5em;
+            width: 2.5em;
+        }
+
+        .game-tile {
+            padding: 0 0.5em;
+            width: 5em;
+        }
+
+        .reveal {
+            font-family: Quicksand;
+            font-size: 30px;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4,
+        .reveal h5 {
+            font-family: Quicksand;
+            text-transform: none;
+        }
+
+        .usecase {
+            padding: 0 0.5em;
+            width: 7em;
+        }
+    </style>
+
+    <title>Empire</title>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <img src="images/titel.svg">
+                <h3>
+                    <div>
+                        Entwicklung eines Multiplayer-Spiels
+                    </div>
+                    <div>
+                        mit aktuellen Web-Technologien
+                    </div>
+                </h3>
+            </section>
+
+            <section>
+                <h3>
+                    Remo Inverardi
+                </h3>
+                <div>
+                    <a href="mailto:remo.inverardi@students.ffhs.ch">remo.inverardi@students.ffhs.ch</a>
+                </div>
+            </section>
+
+            <section>
+                <h3>Fahrplan</h3>
+                <ul>
+                    <li class="fragment">
+                        Motivation und Randbedingungen
+                    </li>
+                    <li class="fragment">
+                        Projektziele und Projektplanung
+                    </li>
+                    <li class="fragment">
+                        Spielidee und Spielregeln
+                    </li>
+                    <li class="fragment">
+                        Anwendungsfälle und Anforderungen
+                    </li>
+                    <li class="fragment">
+                        Module und Komponenten
+                    </li>
+                    <li class="fragment">
+                        Protokolle und Schnittstellen
+                    </li>
+                    <li class="fragment">
+                        Umsetzung und Demonstration
+                    </li>
+                    <li class="fragment">
+                        Retrospektive und Fazit
+                    </li>
+                </ul>
+                <div>
+                    <img src="helpers/fahrplan.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>Motivation</h3>
+                <ul>
+                    <li class="fragment">
+                        Das Web ist allgegenwärtig.
+                    </li>
+                    <li class="fragment">
+                        Computerspiele sind persönlich.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist interdisziplinär.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist lukrativ. <a href="#cite-1">[1]</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="r-stretch">
+                    <img src="stickers/revenue-music.svg">
+                    &nbsp;
+                    <img class="fragment" src="stickers/revenue-movies.svg">
+                    &nbsp;
+                    <img class="fragment" src="stickers/revenue-games.svg">
+                </div>
+                <div class="analog"></div>
+            </section>
+
+            <section>
+                <h3>Randbedingungen</h3>
+                <div>
+                    <img src="helpers/randbedingungen.svg">
+                </div>
+                <ul>
+                    <li class="fragment">
+                        Spiel: mehrere Spieler und rundenbasiert
+                    </li>
+                    <li class="fragment">
+                        Software-Architektur: Client-Server
+                    </li>
+                    <li class="fragment">
+                        Programmiersprache: JavaScript bzw. TypeScript
+                    </li>
+                    <li class="fragment">
+                        Protokoll: menschenlesbar und textbasiert
+                    </li>
+                    <li class="fragment">
+                        Persistenz: langlebige Daten in Datenbank
+                    </li>
+                    <li class="fragment">
+                        Umfang: drei Levels oder mehr
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Projektziele</h3>
+                <div>
+                    <img src="helpers/projektziele.svg">
+                </div>
+                <ul>
+                    <li class="fragment">
+                        attraktives Web-Spiel entwickeln
+                    </li>
+                    <li class="fragment">
+                        Web-Technologien charakterisieren, positionieren, einsetzen
+                    </li>
+                    <li class="fragment">
+                        Web-Protokolle entwerfen, implementieren
+                    </li>
+                    <li class="fragment">
+                        Performanz optimieren
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Projektplanung</h3>
+                <div>
+                    <img src="helpers/projektplanung.svg">
+                </div>
+                <ul>
+                    <li class="fragment">
+                        eine Person und ein Semester
+                    </li>
+                    <li class="fragment">
+                        vier Iterationen und vier Meilensteine
+                    </li>
+                    <li class="fragment">
+                        Shipping is a feature!
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <div>
+                    <img src="helpers/spielidee.svg">
+                </div>
+                <h3>Spielidee</h3>
+                <div>
+                    Bei «Empire» baut ein Spieler sein Imperium auf, indem er eine Karte erkundet und darauf Ressourcen
+                    einsammelt, Ortschaften gründet und Fabriken errichtet.
+                </div>
+            </section>
+
+            <section>
+                <h3>Spielregeln</h3>
+                <ul>
+                    <li class="fragment">
+                        Karte und Kartenfelder
+                    </li>
+                    <li class="fragment">
+                        Fog of war
+                    </li>
+                    <li class="fragment">
+                        Spieler, Spielrunden und Spielzüge
+                    </li>
+                    <li class="fragment">
+                        Ressourcen, Ortschaften und Fabriken
+                    </li>
+                    <li class="fragment">
+                        Angriffe und Trefferpunkte
+                    </li>
+                    <li class="fragment">
+                        Spielziel
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="analog"></div>
+                <div>
+                    <img class="game-player" src="stickers/player.svg">
+                </div>
+                <div>
+                    <img class="game-resource" src="stickers/resource-food.svg">
+                    <img class="game-resource" src="stickers/resource-gold.svg">
+                    <img class="game-resource" src="stickers/resource-research.svg">
+                    <img class="game-resource" src="stickers/resource-weaponry.svg">
+                </div>
+                <div>
+                    <img class="game-tile" src="stickers/tile-forest.svg">
+                    <img class="game-tile" src="stickers/tile-grass.svg">
+                    <img class="game-tile" src="stickers/tile-hill.svg">
+                    <img class="game-tile" src="stickers/tile-mountain.svg">
+                    <img class="game-tile" src="stickers/tile-water.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>Anwendungsfälle</h3>
+            </section>
+
+            <section>
+                <div class="analog"></div>
+                <div>
+                    <img class="actor" src="stickers/player.svg">
+                </div>
+                <div>
+                    <img class="usecase" src="stickers/usecase-1.svg">
+                    <img class="usecase" src="stickers/usecase-4.svg">
+                    <img class="usecase" src="stickers/usecase-3.svg">
+                </div>
+                <div>
+                    <img class="usecase" src="stickers/usecase-5.svg">
+                    <img class="usecase" src="stickers/usecase-2.svg">
+                </div>
+                <div>
+                    <img class="usecase" src="stickers/usecase-6.svg">
+                    <img class="usecase" src="stickers/usecase-7.svg">
+                </div>
+            </section>
+
+            <section>
+                <div class="analog"></div>
+                <div>
+                    <img class="usecase" src="stickers/usecase-8.svg">
+                    <img class="usecase" src="stickers/usecase-9.svg">
+                </div>
+                <div>
+                    <img class="usecase" src="stickers/usecase-10.svg">
+                    <img class="usecase" src="stickers/usecase-11.svg">
+                    <img class="usecase" src="stickers/usecase-12.svg">
+                </div>
+                <div>
+                    <img class="usecase" src="stickers/usecase-13.svg">
+                    <img class="usecase" src="stickers/usecase-14.svg">
+                    <img class="usecase" src="stickers/usecase-15.svg">
+                </div>
+                <div>
+                    <img class="usecase" src="stickers/usecase-16.svg">
+                    <img class="usecase" src="stickers/usecase-17.svg">
+                    <img class="usecase" src="stickers/usecase-18.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>Anforderungen</h3>
+                <ul>
+                    <li class="fragment">
+                        breite Unterstützung
+                        <p class="fragment">
+                            unterschiedliche Hardware
+                            <br>
+                            <span class="fragment">unterschiedliche Software</span>
+                            <br>
+                            <span class="fragment">menschliche Faktoren</span>
+                        </p>
+                    </li>
+                    <li class="fragment">
+                        effiziente Umsetzung
+                        <p class="fragment">
+                            tiefe Antwortzeiten
+                            <br>
+                            <span class="fragment">trotz vieler Partien</span>
+                            <br>
+                            <span class="fragment">trotz vieler Spieler</span>
+                        </p>
+                    </li>
+                </ul>
+                <div>
+                    <img src="helpers/anforderungen.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>Architektur</h3>
+            </section>
+
+            <section>
+                <h3>Protokolle</h3>
+            </section>
+
+            <section>
+                <h3>Schnittstellen</h3>
+            </section>
+
+            <section>
+                <h3>Umsetzung</h3>
+            </section>
+
+            <section>
+                <h3>Demonstration</h3>
+                <div>
+                    <img src="images/demonstration.svg">
+                </div>
+                <div>
+                    <a href="https://empire.i7i.ch">https://empire.i7i.ch</a>
+                </div>
+            </section>
+
+            <section>
+                <h3>Retrospektive</h3>
+            </section>
+
+            <section>
+                <h3>Fazit</h3>
+            </section>
+
+            <section>
+                <h3>Quellen</h3>
+                <div id="cite-1">
+                    [1] statistische Daten von <a href="https://www.statista.com">www.statista.com</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="reveal/dist/reveal.js"></script>
+    <script src="reveal/plugin/notes/notes.js"></script>
+    <script src="reveal/plugin/markdown/markdown.js"></script>
+    <script src="reveal/plugin/highlight/highlight.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+
+</html>
