@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="reveal/reset.css">
+    <link rel="stylesheet" href="reveal/reveal.css">
+    <link rel="stylesheet" href="reveal/theme/white.css">
+
+    <meta charset="utf-8">
+
+    <style>
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            src: url(fonts/quicksand.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 700;
+            src: url(fonts/quicksand.woff2) format('woff2');
+        }
+
+        .stamp {
+            background: black;
+            border-radius: 0 0 10px 10px;
+            color: white;
+            left: 50%;
+            opacity: 0;
+            padding: 10px 20px;
+            position: absolute;
+            text-transform: uppercase;
+            top: 0;
+            transform: translateX(-50%);
+            transition-duration: 1s;
+            transition-property: opacity;
+            z-index: 2;
+        }
+
+        .stamp.visible {
+            opacity: 1;
+        }
+
+        .reveal {
+            font-family: Quicksand;
+            font-size: 30px;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4,
+        .reveal h5 {
+            font-family: Quicksand;
+            text-transform: none;
+        }
+
+        .reveal img.sticker {
+            margin: 10px;
+        }
+
+        .secret {
+            background: url(images/secret.svg);
+            background-size: 100% 100%;
+        }
+    </style>
+
+    <title>Empire</title>
+</head>
+
+<body>
+    <div class="stamp" id="on-flipchart">auf Flipchart</div>
+    <div class="stamp" id="on-whiteboard">auf Whiteboard</div>
+
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <div>
+                    <img src="images/title.svg">
+                </div>
+                <h3>
+                    Entwicklung eines Multiplayer-Spiels
+                    <br>
+                    mit aktuellen Web-Technologien
+                </h3>
+            </section>
+
+            <section>
+                <h3>
+                    Remo Inverardi
+                </h3>
+                <div>
+                    <a href="mailto:remo.inverardi@students.ffhs.ch">remo.inverardi@students.ffhs.ch</a>
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Fahrplan
+                </h3>
+                <ul>
+                    <li class="fragment">
+                        Motivation und Randbedingungen
+                    </li>
+                    <li class="fragment">
+                        Projektziele und Projektplanung
+                    </li>
+                    <li class="fragment">
+                        Spielidee und Spielregeln
+                    </li>
+                    <li class="fragment">
+                        Anwendungsfälle und Anforderungen
+                    </li>
+                    <li class="fragment">
+                        Module und Komponenten
+                    </li>
+                    <li class="fragment">
+                        Protokolle und Schnittstellen
+                    </li>
+                    <li class="fragment">
+                        Probleme und Lösungsansätze
+                    </li>
+                    <li class="fragment">
+                        Umsetzung und Demonstration
+                    </li>
+                    <li class="fragment">
+                        Zusammenfassung und Fazit
+                    </li>
+                </ul>
+                <div>
+                    <img src="helpers/schedule.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Motivation
+                </h3>
+                <ul>
+                    <li class="fragment">
+                        Das Web ist allgegenwärtig.
+                    </li>
+                    <li class="fragment">
+                        Computerspiele sind persönlich.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist interdisziplinär.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist lukrativ. <a href="#cite-1">[1]</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="on-whiteboard" data-visibility="hidden">
+                <div class="r-stretch">
+                    <img src="stickers/revenue-music.svg">
+                    &nbsp;
+                    <img class="fragment" src="stickers/revenue-movies.svg">
+                    &nbsp;
+                    <img class="fragment" src="stickers/revenue-games.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Randbedingungen
+                </h3>
+                <div>
+                    <img src="helpers/conditions.svg">
+                </div>
+                <ul>
+                    <li class="fragment">
+                        Spiel: mehrere Spieler und rundenbasiert
+                    </li>
+                    <li class="fragment">
+                        Architektur: Client-Server
+                    </li>
+                    <li class="fragment">
+                        Programmiersprache: JavaScript bzw. TypeScript
+                    </li>
+                    <li class="fragment">
+                        Protokoll: menschenlesbar und textbasiert
+                    </li>
+                    <li class="fragment">
+                        Persistenz: langlebige Daten in Datenbank
+                    </li>
+                    <li class="fragment">
+                        Umfang: drei Levels oder mehr
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>
+                    Projektziele
+                </h3>
+                <img src="helpers/project-goals.svg">
+                <ul>
+                    <li class="fragment">
+                        attraktives Web-Spiel entwickeln
+                    </li>
+                    <li class="fragment">
+                        Web-Technologien charakterisieren, positionieren, einsetzen
+                    </li>
+                    <li class="fragment">
+                        Web-Protokolle entwerfen, implementieren
+                    </li>
+                    <li class="fragment">
+                        Performanz optimieren
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>
+                    Projektplanung
+                </h3>
+                <div>
+                    <img src="helpers/project-plan.svg">
+                </div>
+                <ul>
+                    <li class="fragment">
+                        eine Person und ein Semester
+                    </li>
+                    <li class="fragment">
+                        vier Iterationen und vier Meilensteine
+                    </li>
+                    <li class="fragment">
+                        Shipping is a feature!
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <div>
+                    <img src="helpers/game-idea.svg">
+                </div>
+                <h3>
+                    Spielidee
+                </h3>
+                <div>
+                    Bei «Empire» baut ein Spieler sein Imperium auf, indem er eine Karte erkundet und darauf Ressourcen einsammelt, Ortschaften gründet und Fabriken errichtet.
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Spielregeln
+                </h3>
+                <ul>
+                    <li class="fragment">
+                        Karte und Kartenfelder
+                    </li>
+                    <li class="fragment">
+                        Fog of war
+                    </li>
+                    <li class="fragment">
+                        Spieler, Spielrunden und Spielzüge
+                    </li>
+                    <li class="fragment">
+                        Ressourcen, Ortschaften und Fabriken
+                    </li>
+                    <li class="fragment">
+                        Angriffe und Trefferpunkte
+                    </li>
+                    <li class="fragment">
+                        Spielziel
+                    </li>
+                </ul>
+            </section>
+
+            <section class="on-whiteboard" data-visibility="hidden">
+                <div>
+                    <img class="sticker" src="stickers/player.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/tile-forest.svg">
+                    <img class="sticker" src="stickers/tile-grass.svg">
+                    <img class="sticker" src="stickers/tile-hill.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/tile-mountain.svg">
+                    <img class="sticker" src="stickers/tile-water.svg">
+                </div>
+            </section>
+
+            <section class="on-whiteboard" data-visibility="hidden">
+                <div>
+                    <img class="sticker" src="stickers/resource-food.svg">
+                    <img class="sticker" src="stickers/resource-gold.svg">
+                    <img class="sticker" src="stickers/resource-research.svg">
+                    <img class="sticker" src="stickers/resource-weaponry.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/structure-village.svg">
+                    <img class="sticker" src="stickers/structure-city.svg">
+                    <img class="sticker" src="stickers/structure-metropolis.svg">
+                    <img class="sticker" src="stickers/structure-factory.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Anwendungsfälle
+                </h3>
+                <ul>
+                    <li class="fragment">
+                        <u>Pre-Game-Usecases</u>
+                        <p>
+                            Partie erstellen
+                            <br>
+                            Partie beitreten
+                            <br>
+                            usw.
+                        </p>
+                    </li>
+                    <li class="fragment">
+                        <u>In-Game-Usecases</u>
+                        <p>
+                            Spielfigur bewegen
+                            <br>
+                            Spielfigur angreifen
+                            <br>
+                            usw.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="on-flipchart" data-visibility="hidden">
+                <div>
+                    <img class="sticker" src="stickers/player.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/usecase-1.svg">
+                    <img class="sticker" src="stickers/usecase-4.svg">
+                    <img class="sticker" src="stickers/usecase-3.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/usecase-5.svg">
+                    <img class="sticker" src="stickers/usecase-2.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/usecase-6.svg">
+                    <img class="sticker" src="stickers/usecase-7.svg">
+                </div>
+            </section>
+
+            <section class="on-flipchart" data-visibility="hidden">
+                <div>
+                    <img class="sticker" src="stickers/usecase-8.svg">
+                    <img class="sticker" src="stickers/usecase-9.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/usecase-10.svg">
+                    <img class="sticker" src="stickers/usecase-11.svg">
+                    <img class="sticker" src="stickers/usecase-12.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/usecase-13.svg">
+                    <img class="sticker" src="stickers/usecase-14.svg">
+                    <img class="sticker" src="stickers/usecase-15.svg">
+                </div>
+                <div>
+                    <img class="sticker" src="stickers/usecase-16.svg">
+                    <img class="sticker" src="stickers/usecase-17.svg">
+                    <img class="sticker" src="stickers/usecase-18.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Anforderungen
+                </h3>
+                <ul>
+                    <li class="fragment">
+                        <u>breite Unterstützung</u>
+                        <p>
+                            unterschiedliche Hardware
+                            <br>
+                            unterschiedliche Software
+                            <br>
+                            menschliche Faktoren
+                        </p>
+                    </li>
+                    <li class="fragment">
+                        <u>effiziente Umsetzung</u>
+                        <p>
+                            tiefe Antwortzeiten
+                            <br>
+                            trotz vieler Partien
+                            <br>
+                            trotz vieler Spieler
+                        </p>
+                    </li>
+                </ul>
+                <div>
+                    <img src="helpers/requirements.svg">
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Module und Komponenten
+                </h3>
+            </section>
+
+            <section class="on-flipchart" data-visibility="hidden">
+                <div>
+                    <img class="package" src="stickers/package-frontend.svg">
+                <div>
+                </div>
+                    <img class="package" src="stickers/package-backend.svg">
+                <div>
+                </div>
+                    <img class="package" src="stickers/package-persistenz.svg">
+                </div>
+            </section>
+
+            <section class="on-flipchart" data-visibility="hidden">
+                <div>
+                    <img class="application" src="stickers/application.svg">
+                    <img class="interface" src="stickers/interface-http.svg">
+                </div>
+                <div>
+                    <img class="application" src="stickers/service-apache.svg">
+                    <img class="interface" src="stickers/interface-websocket.svg">
+                </div>
+                <div>
+                    <img class="application" src="stickers/service-node.svg">
+                    <img class="interface" src="stickers/interface-redis.svg">
+                </div>
+                <div>
+                    <img class="application" src="stickers/filesystem.svg">
+                    <img class="application" src="stickers/database.svg">
+                <div>
+            </section>
+
+            <section>
+                <h3>
+                    Protokolle und Schnittstellen
+                </h3>
+                <ul>
+                    <li class="fragment">
+                        <u>statische Inhalte über HTTP/S</u>
+                        <p>
+                            Bilddateien
+                            <br>
+                            Textdateien
+                            <br>
+                            usw.
+                        </p>
+                    </li>
+                    <li class="fragment">
+                        <u>dynamische Inhalte über WebSockets</u>
+                        <p>
+                            Spielzustände
+                            <br>
+                            Spielzüge
+                            <br>
+                            usw.
+                        </p>
+                    </li>
+                </ul>
+                <div>
+                    <img src="helpers/protocols.svg">
+                </div>
+            </section>
+
+            <section>
+                <section>
+                    <h3>
+                        Probleme und Lösungsansätze
+                    </h3>
+                </section>
+            </section>
+
+            <section data-transition="slide-in fade-out">
+                <h5>
+                    Problem: Logik zwischen Client und Server aufteilen
+                </h5>
+                <div>
+                    betrügerische Aktionen vermeiden
+                    <br>
+                    doppelte Logik minimieren
+                    <br>
+                    unnötige Anfrage minimieren
+                </div>
+                <div>
+                    <img src="helpers/problem-1.svg">
+                </div>
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <div>
+                    <img src="helpers/solution-1.svg">
+                </div>
+                <h5>
+                    Lösung: alle Verantwortung dem Server übertragen
+                </h5>
+                <div>
+                    kompletten Spielstand vor jedem Spielzug übermitteln
+                    <br>
+                    mit allen sichtbaren Objekten
+                    <br>
+                    mit allen erlaubten Aktionen
+                </div>
+            </section>
+
+            <section data-transition="slide-in fade-out">
+                <h5>
+                    Problem: redundanter Code im Client und im Server
+                </h5>
+                <p>
+                    erhöht die Fehlerwahrscheinlichkeit
+                    <br>
+                    erhöht den Wartungsaufwand
+                </p>
+                <div>
+                    <img src="helpers/problem-2.svg">
+                </div>
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <div>
+                    <img src="helpers/solution-2.svg">
+                </div>
+                <h5>
+                    Lösung: Client-Code im Server-Code einbinden
+                </h5>
+                <p>
+                    gleiche Programmiersprache
+                    <br>
+                    einfaches Einbinden mit relativen Pfaden
+                </p>
+            </section>
+
+            <section data-transition="slide-in fade-out">
+                <h5>
+                    Problem: HTML-Elemente sind keine Hexagone
+                </h5>
+                <p>
+                    Alternative: Canvas
+                    <br>
+                    Alternative: Elemente mit transparentem Hintergrund
+                </p>
+                <div>
+                    <img src="helpers/problem-3.svg">
+                </div>
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <div>
+                    <img src="helpers/solution-3.svg">
+                </div>
+                <h5>
+                    Lösung: HTML-Elemente zuschneiden
+                </h5>
+                <p>
+                    Event-Funktionalität geschenkt
+                    <br>
+                    Scrolling-Funktionalität geschenkt
+                    <br>
+                    einfacheres Debugging
+                </p>
+            </section>
+
+            <section>
+                <h3>
+                    Umsetzung
+                </h3>
+                <ol>
+                    <li class="fragment">
+                        interaktive <a href="https://www.inverardi.ch/bsc-inf-webe/wireframes/" target="_blank">Wireframes</a> als Ausgangspunkt
+                    </li>
+                    <li class="fragment">
+                        kontinuierliches Verfeinern der Benutzerschnittstelle
+                    </li>
+                    <li class="fragment">
+                        kontinuierliches Verfeinern des Verhaltens
+                    </li>
+                    <li class="fragment">
+                        regelmässige Testpartien mit Familie und Freunden
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>
+                    Demonstration
+                </h3>
+                <div>
+                    <img src="images/demonstration.svg">
+                </div>
+                <div>
+                    <a href="https://empire.i7i.ch" target="_blank">https://empire.i7i.ch</a>
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    Retrospektive und Fazit
+                </h3>
+                <ul>
+                    <li class="fragment">
+                        Ambitionen waren hoch.
+                    </li>
+                    <li class="fragment">
+                        Browser-Kompatibilität war kein Thema.
+                    </li>
+                    <li class="fragment">
+                        Technologie-Wahl erforderte Kompromisse.
+                    </li>
+                    <li class="fragment">
+                        Verfeinerung der Wireframes hat funktioniert.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist befriedigend.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist kreativ.
+                    </li>
+                    <li class="fragment">
+                        Game-Development ist lehrreich.
+                    </li>
+                    <li class="fragment">
+                        Zur Nachahmung empfohlen!
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>
+                    Quellen
+                </h3>
+                <div id="cite-1">
+                    [1] statistische Daten von <a href="https://www.statista.com">www.statista.com</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="reveal/reveal.js"></script>
+
+    <script>
+        function setVisible(classes, id) {
+            const element = document.getElementById(id);
+
+            if (classes.contains(id)) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        }
+
+        Reveal.initialize({hash: true, plugins: []});
+
+        Reveal.on('slidechanged', event => {
+            const classes = event.currentSlide.classList;
+
+            setVisible(classes, 'on-flipchart');
+            setVisible(classes, 'on-whiteboard');
+        });
+    </script>
+</body>
+
+</html>
