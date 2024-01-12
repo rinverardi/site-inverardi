@@ -61,11 +61,6 @@
         .reveal img.sticker {
             margin: 10px;
         }
-
-        .secret {
-            background: url(images/secret.svg);
-            background-size: 100% 100%;
-        }
     </style>
 
     <title>Empire</title>
@@ -121,13 +116,10 @@
                         Protokolle und Schnittstellen
                     </li>
                     <li class="fragment">
-                        Probleme und Lösungsansätze
-                    </li>
-                    <li class="fragment">
                         Umsetzung und Demonstration
                     </li>
                     <li class="fragment">
-                        Zusammenfassung und Fazit
+                        Erkenntnisse und Fazit
                     </li>
                 </ul>
                 <div>
@@ -142,9 +134,6 @@
                 <ul>
                     <li class="fragment">
                         Das Web ist allgegenwärtig.
-                    </li>
-                    <li class="fragment">
-                        Computerspiele sind persönlich.
                     </li>
                     <li class="fragment">
                         Game-Development ist interdisziplinär.
@@ -188,9 +177,6 @@
                     <li class="fragment">
                         Persistenz: langlebige Daten in Datenbank
                     </li>
-                    <li class="fragment">
-                        Umfang: drei Levels oder mehr
-                    </li>
                 </ul>
             </section>
 
@@ -198,16 +184,15 @@
                 <h3>
                     Projektziele
                 </h3>
-                <img src="helpers/project-goals.svg">
+                <div>
+                    <img src="helpers/project-goals.svg">
+                </div>
                 <ul>
                     <li class="fragment">
-                        attraktives Web-Spiel entwickeln
+                        Web-Technologien lernen und einsetzen
                     </li>
                     <li class="fragment">
-                        Web-Technologien charakterisieren, positionieren, einsetzen
-                    </li>
-                    <li class="fragment">
-                        Web-Protokolle entwerfen, implementieren
+                        Web-Protokolle entwerfen
                     </li>
                     <li class="fragment">
                         Performanz optimieren
@@ -227,7 +212,7 @@
                         eine Person und ein Semester
                     </li>
                     <li class="fragment">
-                        vier Iterationen und vier Meilensteine
+                        fünf Iterationen und fünf Meilensteine
                     </li>
                     <li class="fragment">
                         Shipping is a feature!
@@ -374,7 +359,7 @@
 
             <section>
                 <h3>
-                    Anforderungen
+                    qualitative Anforderungen
                 </h3>
                 <ul>
                     <li class="fragment">
@@ -472,104 +457,6 @@
             </section>
 
             <section>
-                <section>
-                    <h3>
-                        Probleme und Lösungsansätze
-                    </h3>
-                </section>
-            </section>
-
-            <section data-transition="slide-in fade-out">
-                <h5>
-                    Problem: Logik zwischen Client und Server aufteilen
-                </h5>
-                <div>
-                    betrügerische Aktionen vermeiden
-                    <br>
-                    doppelte Logik minimieren
-                    <br>
-                    unnötige Anfrage minimieren
-                </div>
-                <div>
-                    <img src="helpers/problem-1.svg">
-                </div>
-            </section>
-
-            <section data-transition="fade-in slide-out">
-                <div>
-                    <img src="helpers/solution-1.svg">
-                </div>
-                <h5>
-                    Lösung: alle Verantwortung dem Server übertragen
-                </h5>
-                <div>
-                    kompletten Spielstand vor jedem Spielzug übermitteln
-                    <br>
-                    mit allen sichtbaren Objekten
-                    <br>
-                    mit allen erlaubten Aktionen
-                </div>
-            </section>
-
-            <section data-transition="slide-in fade-out">
-                <h5>
-                    Problem: redundanter Code im Client und im Server
-                </h5>
-                <p>
-                    erhöht die Fehlerwahrscheinlichkeit
-                    <br>
-                    erhöht den Wartungsaufwand
-                </p>
-                <div>
-                    <img src="helpers/problem-2.svg">
-                </div>
-            </section>
-
-            <section data-transition="fade-in slide-out">
-                <div>
-                    <img src="helpers/solution-2.svg">
-                </div>
-                <h5>
-                    Lösung: Client-Code im Server-Code einbinden
-                </h5>
-                <p>
-                    gleiche Programmiersprache
-                    <br>
-                    einfaches Einbinden mit relativen Pfaden
-                </p>
-            </section>
-
-            <section data-transition="slide-in fade-out">
-                <h5>
-                    Problem: HTML-Elemente sind keine Hexagone
-                </h5>
-                <p>
-                    Alternative: Canvas
-                    <br>
-                    Alternative: Elemente mit transparentem Hintergrund
-                </p>
-                <div>
-                    <img src="helpers/problem-3.svg">
-                </div>
-            </section>
-
-            <section data-transition="fade-in slide-out">
-                <div>
-                    <img src="helpers/solution-3.svg">
-                </div>
-                <h5>
-                    Lösung: HTML-Elemente zuschneiden
-                </h5>
-                <p>
-                    Event-Funktionalität geschenkt
-                    <br>
-                    Scrolling-Funktionalität geschenkt
-                    <br>
-                    einfacheres Debugging
-                </p>
-            </section>
-
-            <section>
                 <h3>
                     Umsetzung
                 </h3>
@@ -578,15 +465,131 @@
                         interaktive <a href="https://www.inverardi.ch/bsc-inf-webe/wireframes/" target="_blank">Wireframes</a> als Ausgangspunkt
                     </li>
                     <li class="fragment">
-                        kontinuierliches Verfeinern der Benutzerschnittstelle
-                    </li>
-                    <li class="fragment">
                         kontinuierliches Verfeinern des Verhaltens
                     </li>
                     <li class="fragment">
-                        regelmässige Testpartien mit Familie und Freunden
+                        kontinuierliches Verfeinern der Optik
                     </li>
                 </ol>
+            </section>
+
+            <section>
+                <section>
+                    <h3>
+                        Probleme und Lösungsansätze
+                    </h3>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h5>
+                        Problem: Logik zwischen Client und Server aufteilen
+                    </h5>
+                    <div>
+                        betrügerische Aktionen vermeiden
+                        <br>
+                        doppelte Logik minimieren
+                        <br>
+                        unnötige Anfragen minimieren
+                    </div>
+                    <div>
+                        <img src="helpers/problem-1.svg">
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <img src="helpers/solution-1.svg">
+                    </div>
+                    <h5>
+                        Lösung: alle Verantwortung dem Server übertragen
+                    </h5>
+                    <div>
+                        kompletten Spielstand vor jedem Spielzug übermitteln
+                        <br>
+                        mit allen sichtbaren Objekten
+                        <br>
+                        mit allen erlaubten Aktionen
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <a href="https://github.com/rinverardi/edu-bsc-inf-webe/blob/main/examples/game.json" target="_blank">Codebeispiel</a>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h5>
+                        Problem: unterschiedliche Datenmodelle vermeiden
+                    </h5>
+                    <p>
+                        hierarchische Daten in der Applikationsschicht
+                        <br>
+                        relationale Daten in der Persistenzschicht
+                    </p>
+                    <div>
+                        <img src="helpers/problem-2.svg">
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <img src="helpers/solution-2.svg">
+                    </div>
+                    <h5>
+                        Lösung: auf relationale Datenmodelle verzichten
+                    </h5>
+                    <p>
+                        hierarchische Daten auch in der Persistenzschicht
+                        <br>
+                        Redis statt MySQL oder PostgreSQL
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <a href="https://github.com/rinverardi/edu-bsc-inf-webe/blob/main/backend/src/lib/session_context.js" target="_blank">Codebeispiel 1</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/rinverardi/edu-bsc-inf-webe/blob/main/backend/src/game/game_repository.js" target="_blank">Codebeispiel 2</a>
+                    </p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h5>
+                        Problem: HTML-Elemente sind keine Hexagone
+                    </h5>
+                    <p>
+                        Alternative: Canvas
+                        <br>
+                        Alternative: Elemente mit transparentem Hintergrund
+                    </p>
+                    <div>
+                        <img src="helpers/problem-3.svg">
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <img src="helpers/solution-3.svg">
+                    </div>
+                    <h5>
+                        Lösung: HTML-Elemente mit Clip-Pfad zuschneiden
+                    </h5>
+                    <p>
+                        Event-Funktionalität geschenkt
+                        <br>
+                        Scrolling-Funktionalität geschenkt
+                        <br>
+                        einfacheres Debugging
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <a href="https://github.com/rinverardi/edu-bsc-inf-webe/blob/main/frontend/src/styles/empire.css" target="_blank">Codebeispiel</a>
+                    </p>
+                </section>
             </section>
 
             <section>
@@ -594,7 +597,7 @@
                     Demonstration
                 </h3>
                 <div>
-                    <img src="images/demonstration.svg">
+                    <img src="images/qr-demo.svg">
                 </div>
                 <div>
                     <a href="https://empire.i7i.ch" target="_blank">https://empire.i7i.ch</a>
@@ -603,23 +606,14 @@
 
             <section>
                 <h3>
-                    Retrospektive und Fazit
+                    Erkenntnisse und Fazit
                 </h3>
                 <ul>
                     <li class="fragment">
                         Ambitionen waren hoch.
                     </li>
                     <li class="fragment">
-                        Browser-Kompatibilität war kein Thema.
-                    </li>
-                    <li class="fragment">
-                        Technologie-Wahl erforderte Kompromisse.
-                    </li>
-                    <li class="fragment">
-                        Verfeinerung der Wireframes hat funktioniert.
-                    </li>
-                    <li class="fragment">
-                        Game-Development ist befriedigend.
+                        Game-Mechanik braucht noch Liebe.
                     </li>
                     <li class="fragment">
                         Game-Development ist kreativ.
@@ -628,9 +622,24 @@
                         Game-Development ist lehrreich.
                     </li>
                     <li class="fragment">
-                        Zur Nachahmung empfohlen!
+                        Browser-Kompatibilität war kein Thema.
+                    </li>
+                    <li class="fragment">
+                        Verfeinerung der Wireframes hat funktioniert.
                     </li>
                 </ul>
+            </section>
+
+            <section>
+                <h3>
+                    Folien
+                </h3>
+                <div>
+                    <img src="images/qr-slides.svg">
+                </div>
+                <div>
+                    <a href="https://www.inverardi.ch/bsc-inf-webe/presentation/" target="_blank">https://www.inverardi.ch/bsc-inf-webe/presentation/</a>
+                </div>
             </section>
 
             <section>
