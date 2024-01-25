@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="styles/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/empire.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Empire</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title-container">
+                    <img class="title" src="images/title.svg">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mt-2">
+                <button class="can-click control full-width link" data-button="createGame" id="link-create">
+                </button>
+            </div>
+            <div class="col-sm-6 mt-2">
+                <button class="can-click control full-width link" data-button="joinGame" id="link-join">
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mt-2">
+                <button class="can-click control full-width link" data-button="showInstructions" id="link-show-instructions">
+                </button>
+            </div>
+            <div class="col-sm-6 mt-2">
+                <button class="can-click control full-width link" data-button="showHighscores" id="link-show-highscores">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { Context } from './scripts/context.js';
+        import { Game } from './scripts/game.js';
+        import { Player } from './scripts/player.js';
+
+        // Handles messages received on the WebSocket.
+        //
+        // In the happy case, the user is not participating in a game. In the
+        // other cases, this function tries to recover by redirecting to the
+        // appropriate page.
+
+        function onMessage(game) {
+            switch (game.status) {
+                case Game.Status.aborted:
+                case Game.Status.missing:
+                    break;
+
+                case Game.Status.ended:
+                    context.navigation().gameOver();
+                    break;
+
+                case Game.Status.running:
+                    context.navigation().continuePlaying();
+                    break;
+
+                case Game.Status.waiting:
+                    context.navigation().continueWaiting(game);
+                    break;
+
+                default:
+                    throw new RangeError('No such status');
+            }
+        }
+
+        // Sets up the event handling for the 'create game' button.
+
+        function wireLinkCreate() {
+            context.navigation().wireClick({
+                id: 'link-create',
+                onClick: () => 'create_game_1.html'
+            });
+        }
+
+        // Sets up the event handling for the 'join game' button.
+
+        function wireLinkJoin() {
+            context.navigation().wireClick({
+                id: 'link-join',
+                onClick: () => 'join_game_1.html'
+            });
+        }
+
+        // Sets up the event handling for the 'show highscores' button.
+
+        function wireLinkShowHighscores() {
+            context.navigation().wireClick({
+                id: 'link-show-highscores',
+                onClick: () => 'show_highscores.html'
+            });
+        }
+
+        // Sets up the event handling for the 'show instructions' button.
+
+        function wireLinkShowInstructions() {
+            context.navigation().wireClick({
+                id: 'link-show-instructions',
+                onClick: () => 'show_instructions.html'
+            });
+        }
+
+        const context = new Context();
+
+        context.communication().connectGame(onMessage);
+        context.translationView().translate();
+
+        wireLinkCreate();
+        wireLinkJoin();
+        wireLinkShowHighscores();
+        wireLinkShowInstructions();
+    </script>
+</body>
+
+</html>

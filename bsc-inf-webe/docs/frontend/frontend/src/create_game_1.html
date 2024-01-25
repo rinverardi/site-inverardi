@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+
+    <link rel="stylesheet" href="styles/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/empire.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <script src="scripts/lib/bootstrap.bundle.min.js"></script>
+
+    <title>Empire</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 data-title="createGame1">
+                </h1>
+            </div>
+        </div>
+        <div class="mt-2 row">
+            <div class="col-sm-6">
+                <div class="area" data-label="map">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="control-wrapper">
+                    <select class="can-expand control full-width" id="select">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2 row">
+            <div class="col-sm-6">
+                <div class="area" data-label="name">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <input class="can-edit control full-width" id="input">
+            </div>
+        </div>
+        <div class="mt-2 row">
+            <div class="col-sm-6 mt-2">
+                <button class="can-click control full-width link" data-button="back" id="link-back">
+                </button>
+            </div>
+            <div class="col-sm-6 mt-2" id="link-next-container">
+                <button class="can-click control full-width link" data-button="next" id="link-next">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { Action } from './scripts/action.js';
+        import { Context } from './scripts/context.js';
+        import { Game } from './scripts/game.js';
+
+        // Handles messages received on the WebSocket.
+        //
+        // In the happy case, the user clicks on 'next' and continues to the
+        // 'create_game_2' page. In the other cases, this function tries to
+        // recover by redirecting to the appropriate page.
+
+        function onMessage(game) {
+            switch (game.status) {
+                case Game.Status.aborted:
+                    context.navigation().startOver();
+                    break;
+
+                case Game.Status.ended:
+                    context.navigation().gameOver();
+                    break;
+
+                case Game.Status.running:
+                    context.navigation().continuePlaying();
+                    break;
+
+                case Game.Status.missing:
+                    break;
+
+                case Game.Status.waiting:
+                    context.navigation().continueWaiting(game);
+                    break;
+
+                default:
+                    throw new RangeError('No such status');
+            }
+        }
+
+        // Enables or disables the 'next' button.
+        //
+        // If the button is disabled, a tooltip with further information is
+        // shown.
+
+        function updateLink() {
+            const input = document.getElementById('input');
+            const link = document.getElementById('link-next');
+
+            if (input.value) {
+                link.disabled = false;
+
+                context.tipManager().removeTip('link-next-container');
+            } else {
+                link.disabled = true;
+
+                context.tipManager().addTip('link-next-container', context.translation().tip('missingName'));
+            }
+        }
+
+        // Sets up the event handling for the 'nickname' input.
+
+        function wireInput() {
+            const input = document.getElementById('input');
+
+            if (!input.value) {
+                input.value = context.playerHelper().loadName();
+            }
+
+            input.addEventListener('input', () => {
+                context.playerHelper().saveName(input.value)
+
+                updateLink();
+            });
+        }
+
+        // Sets up the event handling for the 'back' button.
+
+        function wireLinkBack() {
+            context.navigation().wireClick({
+                id: 'link-back',
+                onClick: () => 'index.html'
+            });
+        }
+
+        // Sets up the event handling for the 'next' button.
+
+        function wireLinkNext() {
+            context.navigation().wireClick({
+                id: 'link-next',
+                onClick: () => {
+                    const action = {
+                        id: Action.createGame,
+                        map: { id: parseInt(document.getElementById('select').value) },
+                        player: { name: document.getElementById('input').value }
+                    };
+
+                    context.communication().sendMessage(action);
+                }
+            });
+        }
+
+        // Sets up the event handling for the 'map' drop-down.
+
+        function wireSelect() {
+            const input = document.getElementById('select');
+
+            for (let mapId = 0; mapId < 3; mapId++) {
+                const option = new Option(context.translation().map(mapId), mapId);
+
+                input.add(option);
+            }
+        }
+
+        const context = new Context();
+
+        context.communication().connectGame(onMessage);
+        context.translationView().translate();
+
+        wireInput();
+        wireLinkBack();
+        wireLinkNext();
+        wireSelect();
+    </script>
+</body>
+
+</html>
