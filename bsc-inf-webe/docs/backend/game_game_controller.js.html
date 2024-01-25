@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: game/game_controller.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: game/game_controller.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Action } from '../action/action.js';
+import { GlobalContext } from '../lib/global_context.js';
+import { Logger } from '../lib/logger.js';
+import { SessionContext } from '../lib/session_context.js';
+
+/**
+ * Acts as an interface between the WebSocket connection and the game logic:
+ *
+ * &lt;ul>
+ *   &lt;li>When the connection is opened, it is tied to one or more game states.
+ *   &lt;li>Inbound messages are used to update the game states.
+ *   &lt;li>Outbound messages notify clients about changes to the game states.
+ * &lt;/ul>
+ */
+
+export class GameController {
+    #chatService;
+    #gameService;
+    #playerService;
+    #turnService;
+
+    /**
+     * Avoid calling this constructor directly! Instead, use the globally-scoped
+     * object from the global context.
+     *
+     * @param {GlobalContext} globalContext holds the globally-scoped objects
+     */
+
+    constructor(globalContext) {
+        this.#chatService = globalContext.chatService();
+        this.#gameService = globalContext.gameService();
+        this.#playerService = globalContext.playerService();
+        this.#turnService = globalContext.turnService();
+    }
+
+    /**
+     * Manages the communication related to the current game.
+     * &lt;p>
+     * Used both in the pre-game-phase (i.e., during match making) and in the
+     * in-game-phase (i.e., while actually playing).
+     *
+     * @param {SessionContext} sessionContext holds the session-scoped objects
+     */
+
+    async watchGame(sessionContext) {
+        const wsConnection = sessionContext.wsConnection();
+
+        wsConnection.on('message', async wsMessage => {
+            try {
+                const action = JSON.parse(wsMessage);
+
+                switch (action.id) {
+                    case Action.abortGame:
+                        await this.#gameService.abortGame(sessionContext);
+                        break;
+
+                    case Action.createGame:
+                        await this.#gameService.createGame(sessionContext, action.map.id, action.player.name);
+                        break;
+
+                    case Action.executeTurn:
+                        await this.#turnService.executeTurn(sessionContext, action.turn);
+                        break;
+
+                    case Action.forfeitGame:
+                        await this.#playerService.forfeitGame(sessionContext);
+                        break;
+
+                    case Action.joinGame:
+                        await this.#playerService.joinGame(sessionContext, action.player.name);
+                        break;
+
+                    case Action.leaveGame:
+                        await this.#playerService.leaveGame(sessionContext);
+                        break;
+
+                    case Action.sendMessage:
+                        await this.#chatService.sendMessage(sessionContext, action.text);
+                        break;
+
+                    case Action.skipTurn:
+                        await this.#turnService.skipTurn(sessionContext);
+                        break;
+
+                    case Action.startGame:
+                        await this.#gameService.startGame(sessionContext);
+                        break;
+
+                    default:
+                        throw new RangeError('No such action');
+                }
+            } catch (exception) {
+                Logger.e('GameController.watchGame()', exception);
+            }
+        });
+
+        await this.#gameService.watchGame(sessionContext, game => {
+            wsConnection.send(JSON.stringify(game));
+        });
+    }
+
+    /**
+     * Manages the communication for all games.
+     * &lt;p>
+     * Only used in the pre-game-phase (i.e., during match making).
+     *
+     * @param {SessionContext} sessionContext holds the session-scoped objects
+     */
+
+    async watchGameList(sessionContext) {
+        const wsConnection = sessionContext.wsConnection();
+
+        await this.#gameService.watchGameList(sessionContext, gameList => {
+            wsConnection.send(JSON.stringify(gameList));
+        });
+    }
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="ArrayHelper.html">ArrayHelper</a></li><li><a href="Authn.html">Authn</a></li><li><a href="Authz.html">Authz</a></li><li><a href="ChatService.html">ChatService</a></li><li><a href="Game.html">Game</a></li><li><a href="GameAccess.html">GameAccess</a></li><li><a href="GameController.html">GameController</a></li><li><a href="GameManager.html">GameManager</a></li><li><a href="GameMapper.html">GameMapper</a></li><li><a href="GameRepository.html">GameRepository</a></li><li><a href="GameService.html">GameService</a></li><li><a href="GlobalContext.html">GlobalContext</a></li><li><a href="Highscore.html">Highscore</a></li><li><a href="HighscoreController.html">HighscoreController</a></li><li><a href="HighscoreRepository.html">HighscoreRepository</a></li><li><a href="HighscoreService.html">HighscoreService</a></li><li><a href="Inventory.html">Inventory</a></li><li><a href="InventoryManager.html">InventoryManager</a></li><li><a href="InventoryMapper.html">InventoryMapper</a></li><li><a href="Logger.html">Logger</a></li><li><a href="Map.html">Map</a></li><li><a href="MapAccess.html">MapAccess</a></li><li><a href="MapMapper.html">MapMapper</a></li><li><a href="Notification.html">Notification</a></li><li><a href="Player.html">Player</a></li><li><a href="PlayerAccess.html">PlayerAccess</a></li><li><a href="PlayerManager.html">PlayerManager</a></li><li><a href="PlayerMapper.html">PlayerMapper</a></li><li><a href="PlayerService.html">PlayerService</a></li><li><a href="Resource.html">Resource</a></li><li><a href="ResourceManager.html">ResourceManager</a></li><li><a href="ResourceMapper.html">ResourceMapper</a></li><li><a href="SessionContext.html">SessionContext</a></li><li><a href="StringHelper.html">StringHelper</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureManager.html">StructureManager</a></li><li><a href="StructureMapper.html">StructureMapper</a></li><li><a href="Turn.html">Turn</a></li><li><a href="TurnManager.html">TurnManager</a></li><li><a href="TurnMapper.html">TurnMapper</a></li><li><a href="TurnService.html">TurnService</a></li><li><a href="VisibilityAccess.html">VisibilityAccess</a></li><li><a href="VisibilityManager.html">VisibilityManager</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Action">Action</a></li><li><a href="global.html#GlobalConfig">GlobalConfig</a></li><li><a href="global.html#Visibility">Visibility</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Jan 25 2024 08:53:44 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

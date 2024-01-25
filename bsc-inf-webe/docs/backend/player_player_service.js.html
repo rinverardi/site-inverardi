@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: player/player_service.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: player/player_service.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { GlobalConfig } from '../lib/global_config.js';
+import { GlobalContext } from '../lib/global_context.js';
+import { Player } from './player.js';
+import { SessionContext } from '../lib/session_context.js';
+
+/**
+ * Provides high-level methods for working with players (e.g., forfeit games,
+ * join games, leave games).
+ * &lt;p>
+ * Typically, service methods are invoked from controller classes. If you find
+ * yourself calling service methods from other classes, consider introducing a
+ * helper class.
+ */
+
+export class PlayerService {
+    #authn;
+    #authz;
+    #gameManager;
+    #gameRepository;
+    #highscoreService;
+    #playerManager;
+    #turnManager;
+
+    /**
+     * Avoid calling this constructor directly! Instead, use the globally-scoped
+     * object from the global context.
+     *
+     * @param {GlobalContext} globalContext holds the globally-scoped objects
+     */
+
+    constructor(globalContext) {
+        this.#authn = globalContext.authn();
+        this.#authz = globalContext.authz();
+        this.#gameManager = globalContext.gameManager();
+        this.#gameRepository = globalContext.gameRepository();
+        this.#highscoreService = globalContext.highscoreService();
+        this.#playerManager = globalContext.playerManager();
+        this.#turnManager = globalContext.turnManager();
+    }
+
+    #autoStart(game) {
+        const players = game.players.filter(that => that.status === Player.Status.alive);
+
+        if (players.length >= GlobalConfig.slots.maxPlayers) {
+            this.#gameManager.startGame(game);
+            this.#turnManager.startTurn(game);
+        }
+    }
+
+    /**
+     * Removes a player from the game when the player forfeits.
+     * &lt;p>
+     * This action is only possible during the in-game phase.
+     *
+     * @param {SessionContext} sessionContext holds the session-scoped objects
+     */
+
+    async forfeitGame(sessionContext) {
+        const game = await this.#gameRepository.loadGame(sessionContext);
+        const player = this.#authn.getPlayer(sessionContext, game);
+
+        this.#authz.canForfeitGame(game).orThrow();
+
+        const playerIndex = game.players.findIndex(that => that.id === game.turn.player);
+
+        game.players[playerIndex] = {
+            id: player.id,
+            status: Player.Status.forfeited
+        };
+
+        const winner = this.#gameManager.determineWinner(game);
+
+        if (winner) {
+            this.#gameManager.endGame(game, winner);
+            this.#highscoreService.submitScore(sessionContext, winner);
+        } else {
+            this.#turnManager.endTurn(game);
+            this.#turnManager.startTurn(game);
+        }
+
+        await this.#gameRepository.saveGame(sessionContext, game);
+        await this.#gameRepository.publishGame(sessionContext, game);
+    }
+
+    /**
+     * Adds a player to the game when the player joins.
+     *
+     * @param {SessionContext} sessionContext holds the session-scoped objects
+     */
+
+    async joinGame(sessionContext, playerName) {
+        const game = await this.#gameRepository.loadGame(sessionContext);
+
+        this.#authz.canJoinGame(game, playerName).orThrow();
+
+        game.players = game.players.filter(that => that.id !== sessionContext.playerId);
+
+        const player = this.#playerManager.buildPlayer(sessionContext, playerName, Player.Role.participant);
+
+        game.players.push(player);
+
+        this.#autoStart(game);
+
+        await this.#gameRepository.saveGame(sessionContext, game);
+        await this.#gameRepository.publishGame(sessionContext, game);
+    }
+
+    /**
+     * Removes a player from the game when the player leaves.
+     * &lt;p>
+     * This action is only possible during the pre-game phase.
+     *
+     * @param {SessionContext} sessionContext holds the session-scoped objects
+     */
+
+    async leaveGame(sessionContext) {
+        const game = await this.#gameRepository.loadGame(sessionContext);
+        const player = this.#authn.getPlayer(sessionContext, game);
+
+        this.#authz.canLeaveGame(game).orThrow();
+
+        game.players = game.players.filter(that => that.id !== player.id);
+
+        game.players.push({
+            id: player.id,
+            status: Player.Status.left
+        });
+
+        await this.#gameRepository.saveGame(sessionContext, game);
+        await this.#gameRepository.publishGame(sessionContext, game);
+    }
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="ArrayHelper.html">ArrayHelper</a></li><li><a href="Authn.html">Authn</a></li><li><a href="Authz.html">Authz</a></li><li><a href="ChatService.html">ChatService</a></li><li><a href="Game.html">Game</a></li><li><a href="GameAccess.html">GameAccess</a></li><li><a href="GameController.html">GameController</a></li><li><a href="GameManager.html">GameManager</a></li><li><a href="GameMapper.html">GameMapper</a></li><li><a href="GameRepository.html">GameRepository</a></li><li><a href="GameService.html">GameService</a></li><li><a href="GlobalContext.html">GlobalContext</a></li><li><a href="Highscore.html">Highscore</a></li><li><a href="HighscoreController.html">HighscoreController</a></li><li><a href="HighscoreRepository.html">HighscoreRepository</a></li><li><a href="HighscoreService.html">HighscoreService</a></li><li><a href="Inventory.html">Inventory</a></li><li><a href="InventoryManager.html">InventoryManager</a></li><li><a href="InventoryMapper.html">InventoryMapper</a></li><li><a href="Logger.html">Logger</a></li><li><a href="Map.html">Map</a></li><li><a href="MapAccess.html">MapAccess</a></li><li><a href="MapMapper.html">MapMapper</a></li><li><a href="Notification.html">Notification</a></li><li><a href="Player.html">Player</a></li><li><a href="PlayerAccess.html">PlayerAccess</a></li><li><a href="PlayerManager.html">PlayerManager</a></li><li><a href="PlayerMapper.html">PlayerMapper</a></li><li><a href="PlayerService.html">PlayerService</a></li><li><a href="Resource.html">Resource</a></li><li><a href="ResourceManager.html">ResourceManager</a></li><li><a href="ResourceMapper.html">ResourceMapper</a></li><li><a href="SessionContext.html">SessionContext</a></li><li><a href="StringHelper.html">StringHelper</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureManager.html">StructureManager</a></li><li><a href="StructureMapper.html">StructureMapper</a></li><li><a href="Turn.html">Turn</a></li><li><a href="TurnManager.html">TurnManager</a></li><li><a href="TurnMapper.html">TurnMapper</a></li><li><a href="TurnService.html">TurnService</a></li><li><a href="VisibilityAccess.html">VisibilityAccess</a></li><li><a href="VisibilityManager.html">VisibilityManager</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Action">Action</a></li><li><a href="global.html#GlobalConfig">GlobalConfig</a></li><li><a href="global.html#Visibility">Visibility</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Jan 25 2024 08:53:44 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: map/map_access.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: map/map_access.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Map } from './map.js';
+import { Player } from '../player/player.js';
+
+/**
+ * Provides helper methods for accessing specific elements of a map (e.g.,
+ * getting the map dimensions, retrieving a player given its position,
+ * retrieving a resource given its position, retrieving a structure given its
+ * position).
+ */
+
+export class MapAccess {
+
+    /**
+     * Retrieves a player given its position on the map.
+     *
+     * @param {object} game the game state
+     * @param {number} x the x-coordinate of the position
+     * @param {number} y the y-coordinate of the position
+     * @returns {object} the player
+     */
+
+    getPlayerAt(game, x, y) {
+        for (const player of game.players) {
+            if (player.status === Player.Status.alive) {
+                const position = player.position;
+
+                if (position &amp;&amp; position[0] === x &amp;&amp; position[1] === y) {
+                    return player;
+                }
+            }
+        }
+    }
+
+    /**
+     * Retrieves a resource given its position on the map.
+     *
+     * @param {object} game the game state
+     * @param {number} x the x-coordinate of the position
+     * @param {number} y the y-coordinate of the position
+     * @returns {object} the resource
+     */
+
+    getResourceAt(game, x, y) {
+        for (const resource of game.resources) {
+            const position = resource.position;
+
+            if (position[0] === x &amp;&amp; position[1] === y) {
+                return resource;
+            }
+        }
+    }
+
+    /**
+     * Returns the horizontal size of the map.
+     *
+     * @param {object} game the game state
+     * @returns {number} the horizontal size
+     */
+
+    getSizeX(game) {
+        return game.map.tiles[0].length / 2;
+    }
+
+    /**
+     * Returns the vertical size of the map.
+     *
+     * @param {object} game the game state
+     * @returns {number} the vertical size
+     */
+
+    getSizeY(game) {
+        return game.map.tiles.length;
+    }
+
+    /**
+     * Retrieves a structure given its position on the map.
+     *
+     * @param {object} game the game state
+     * @param {number} x the x-coordinate of the position
+     * @param {number} y the y-coordinate of the position
+     * @returns {object} the structure
+     */
+
+    getStructureAt(game, x, y) {
+        for (const structure of game.structures) {
+            const position = structure.position;
+
+            if (position[0] === x &amp;&amp; position[1] === y) {
+                return structure;
+            }
+        }
+    }
+
+    /**
+     * Retrieves a tile given its position on the map.
+     *
+     * @param {object} game the game state
+     * @param {number} x the x-coordinate of the position
+     * @param {number} y the y-coordinate of the position
+     * @returns {object} the tile
+     */
+
+    getTileAt(game, x, y) {
+        const tile = game.map.tiles[y][x];
+
+        if (Object.values(Map.Tile).includes(tile)) {
+            return tile;
+        } else {
+            throw new RangeError('No such tile');
+        }
+    }
+
+    /**
+     * Picks a random position on the map.
+     * &lt;p>
+     * The position is returned as an array containing the x-coordinate and the
+     * y-coordinate.
+     *
+     * @param {object} game the game state
+     * @returns {Array} the position
+     */
+
+    pickPosition(game) {
+        const x = Math.floor(Math.random() * this.getSizeX(game));
+        const y = Math.floor(Math.random() * this.getSizeY(game));
+
+        return [x * 2 + y % 2, y];
+    }
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="ArrayHelper.html">ArrayHelper</a></li><li><a href="Authn.html">Authn</a></li><li><a href="Authz.html">Authz</a></li><li><a href="ChatService.html">ChatService</a></li><li><a href="Game.html">Game</a></li><li><a href="GameAccess.html">GameAccess</a></li><li><a href="GameController.html">GameController</a></li><li><a href="GameManager.html">GameManager</a></li><li><a href="GameMapper.html">GameMapper</a></li><li><a href="GameRepository.html">GameRepository</a></li><li><a href="GameService.html">GameService</a></li><li><a href="GlobalContext.html">GlobalContext</a></li><li><a href="Highscore.html">Highscore</a></li><li><a href="HighscoreController.html">HighscoreController</a></li><li><a href="HighscoreRepository.html">HighscoreRepository</a></li><li><a href="HighscoreService.html">HighscoreService</a></li><li><a href="Inventory.html">Inventory</a></li><li><a href="InventoryManager.html">InventoryManager</a></li><li><a href="InventoryMapper.html">InventoryMapper</a></li><li><a href="Logger.html">Logger</a></li><li><a href="Map.html">Map</a></li><li><a href="MapAccess.html">MapAccess</a></li><li><a href="MapMapper.html">MapMapper</a></li><li><a href="Notification.html">Notification</a></li><li><a href="Player.html">Player</a></li><li><a href="PlayerAccess.html">PlayerAccess</a></li><li><a href="PlayerManager.html">PlayerManager</a></li><li><a href="PlayerMapper.html">PlayerMapper</a></li><li><a href="PlayerService.html">PlayerService</a></li><li><a href="Resource.html">Resource</a></li><li><a href="ResourceManager.html">ResourceManager</a></li><li><a href="ResourceMapper.html">ResourceMapper</a></li><li><a href="SessionContext.html">SessionContext</a></li><li><a href="StringHelper.html">StringHelper</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureManager.html">StructureManager</a></li><li><a href="StructureMapper.html">StructureMapper</a></li><li><a href="Turn.html">Turn</a></li><li><a href="TurnManager.html">TurnManager</a></li><li><a href="TurnMapper.html">TurnMapper</a></li><li><a href="TurnService.html">TurnService</a></li><li><a href="VisibilityAccess.html">VisibilityAccess</a></li><li><a href="VisibilityManager.html">VisibilityManager</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Action">Action</a></li><li><a href="global.html#GlobalConfig">GlobalConfig</a></li><li><a href="global.html#Visibility">Visibility</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Jan 25 2024 08:53:44 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

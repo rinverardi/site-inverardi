@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: turn.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: turn.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Context } from './context.js';
+import { Structure } from './structure.js';
+
+/**
+ * This is not a data structure that represents a turn! Rather, it is a
+ * container class for turn-related things.
+ */
+
+export class Turn {
+
+    /**
+     * Defines the turn types.
+     */
+
+    static get Type() {
+        return Object.freeze({
+            build: 'build',
+        });
+    }
+};
+
+
+/**
+ * Provides turn-related helper methods.
+ */
+
+export class TurnHelper {
+
+    /**
+     * Returns the index of a turn.
+     * &lt;p>
+     * If no turn with the given criteria exists, the returned value is -1.
+     *
+     * @param {object} game the game
+     * @param {string} structure the desired type of structure
+     * @param {string} type the desired type of turn
+     * @returns {number} the turn index or -1
+     */
+
+    findTurn(game, structure, type) {
+        const turns = game.turns ?? [];
+
+        return turns.findIndex(that => that.structure === structure &amp;&amp; that.type === type);
+    }
+
+    /**
+     * Returns the current player.
+     *
+     * @param {object} game the game
+     * @returns {object} the player
+     */
+
+    getPlayer(game) {
+        const playerId = game.turn.player;
+
+        for (const player of game.players) {
+            if (player.id === playerId) {
+                return player;
+            }
+        }
+    }
+
+    /**
+     * Looks up a turn, given its position on the map.
+     *
+     * @param {number} x the x-coordinate of the position
+     * @param {number} y the y-coordinate of the position
+     * @returns {object} the turn
+     */
+
+    getTurn(game, x, y) {
+        let turnCount = game.turns ? game.turns.length : 0;
+
+        for (let turnIndex = 0; turnIndex &lt; turnCount; turnIndex++) {
+            let turn = game.turns[turnIndex];
+
+            if (turn.positionTo &amp;&amp; turn.positionTo[0] === x &amp;&amp; turn.positionTo[1] === y) {
+                return turnIndex;
+            }
+        }
+    }
+}
+
+/**
+ * Updates the turn-related portion of the user interface.
+ */
+
+export class TurnView {
+    #playerHelper;
+    #turnHelper;
+
+    /**
+     * Avoid calling this constructor directly! Instead, use the globally-scoped
+     * object from the context.
+     *
+     * @param {Context} context holds the globally-scoped objects
+     */
+
+    constructor(context) {
+        this.#playerHelper = context.playerHelper();
+        this.#turnHelper = context.turnHelper();
+    }
+
+    /**
+     * Updates the user inteface, given the current state of the game.
+     *
+     * @param {object} game the game
+     */
+
+    bindGame(game) {
+        const positions = [];
+
+        if (game.turns) {
+            game.turns
+                .filter(that => that.positionTo)
+                .forEach(that => positions.push(that.positionTo));
+
+            if (this.#playerHelper.isMe(game)) {
+                const me = this.#playerHelper.getMe(game);
+
+                positions.push(me.position);
+            }
+
+            this.#stylePlayers(positions);
+            this.#styleResources(positions);
+            this.#styleStructures(positions);
+            this.#styleTiles(positions);
+        } else {
+            this.#reset();
+        }
+
+        this.#toggleButtons(game);
+    }
+
+    #reset() {
+        document.querySelectorAll('.active').forEach(that => that.classList.remove('active'));
+        document.querySelectorAll('.inactive').forEach(that => that.classList.remove('inactive'));
+    }
+
+    #stylePlayers(positions) {
+        const playerElements = document.querySelectorAll('.player, .resources');
+
+        for (const playerElement of playerElements) {
+            const { x, y } = playerElement.dataset;
+
+            if (positions.some(that => that[0] === parseInt(x) &amp;&amp; that[1] === parseInt(y))) {
+                playerElement.classList.add('active');
+            } else {
+                playerElement.classList.remove('active');
+            }
+        }
+    }
+
+    #styleResources(positions) {
+        const resourceElements = document.querySelectorAll('.resource');
+
+        for (const resourceElement of resourceElements) {
+            const { x, y } = resourceElement.dataset;
+
+            if (positions.some(that => that[0] === parseInt(x) &amp;&amp; that[1] === parseInt(y))) {
+                resourceElement.classList.add('active');
+            } else {
+                resourceElement.classList.remove('active');
+            }
+        }
+    }
+
+    #styleStructures(positions) {
+        const structureElements = document.querySelectorAll('.structure');
+
+        for (const structureElement of structureElements) {
+            const { x, y } = structureElement.dataset;
+
+            if (positions.some(that => that[0] === parseInt(x) &amp;&amp; that[1] === parseInt(y))) {
+                structureElement.classList.add('active');
+            } else {
+                structureElement.classList.remove('active');
+            }
+        }
+    }
+
+    #styleTiles(positions) {
+        const tileElements = document.querySelectorAll('.tile');
+
+        for (const tileElement of tileElements) {
+            const { x, y } = tileElement.dataset;
+
+            if (positions.some(that => that[0] === parseInt(x) &amp;&amp; that[1] === parseInt(y))) {
+                tileElement.classList.add('active');
+                tileElement.classList.remove('inactive');
+            } else {
+                tileElement.classList.remove('active');
+                tileElement.classList.add('inactive');
+            }
+        }
+    }
+
+    #toggleButtons(game) {
+        const buttons = [
+            {id: 'button-build-city', structure: Structure.Type.city},
+            {id: 'button-build-factory', structure: Structure.Type.factory},
+            {id: 'button-build-metropolis', structure: Structure.Type.metropolis},
+            {id: 'button-build-village', structure: Structure.Type.village}
+        ];
+
+        for (const {id, structure} of buttons) {
+            let turn = this.#turnHelper.findTurn(game, structure, Turn.Type.build);
+
+            document.getElementById(id).disabled = turn &lt; 0;
+        }
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ChatView.html">ChatView</a></li><li><a href="Communication.html">Communication</a></li><li><a href="Context.html">Context</a></li><li><a href="Game.html">Game</a></li><li><a href="GameHelper.html">GameHelper</a></li><li><a href="HighscoreView.html">HighscoreView</a></li><li><a href="Html.html">Html</a></li><li><a href="InventoryView.html">InventoryView</a></li><li><a href="MapTile.html">MapTile</a></li><li><a href="MapView.html">MapView</a></li><li><a href="Navigation.html">Navigation</a></li><li><a href="Notification.html">Notification</a></li><li><a href="NotificationHelper.html">NotificationHelper</a></li><li><a href="NotificationView.html">NotificationView</a></li><li><a href="Player.html">Player</a></li><li><a href="PlayerHelper.html">PlayerHelper</a></li><li><a href="PlayerView.html">PlayerView</a></li><li><a href="Random.html">Random</a></li><li><a href="RankingView.html">RankingView</a></li><li><a href="Resource.html">Resource</a></li><li><a href="ResourceView.html">ResourceView</a></li><li><a href="String.html">String</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="TipManager.html">TipManager</a></li><li><a href="TipView.html">TipView</a></li><li><a href="Transition.html">Transition</a></li><li><a href="Translation.html">Translation</a></li><li><a href="TranslationView.html">TranslationView</a></li><li><a href="Turn.html">Turn</a></li><li><a href="TurnHelper.html">TurnHelper</a></li><li><a href="TurnView.html">TurnView</a></li><li><a href="WinnerView.html">WinnerView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Action">Action</a></li><li><a href="global.html#Config">Config</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Jan 25 2024 08:53:45 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
