@@ -1,0 +1,724 @@
+{
+  "declaration": {
+    "canton": "sg",
+    "subject": "np",
+    "year": 2023
+  },
+  "fields": {
+    "childData.correctTo.1": {
+      "box": [
+        2184,
+        2275,
+        2409,
+        2345
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.correctTo.2": {
+      "box": [
+        2184,
+        2345,
+        2409,
+        2416
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.correctTo.3": {
+      "box": [
+        2184,
+        2416,
+        2409,
+        2486
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.correctTo.4": {
+      "box": [
+        2184,
+        2487,
+        2409,
+        2558
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.correctTo.5": {
+      "box": [
+        2184,
+        2559,
+        2409,
+        2629
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.dateOfBirth.1": {
+      "box": [
+        755,
+        2274,
+        979,
+        2345
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.dateOfBirth.2": {
+      "box": [
+        755,
+        2346,
+        979,
+        2416
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.dateOfBirth.3": {
+      "box": [
+        755,
+        2416,
+        979,
+        2487
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.dateOfBirth.4": {
+      "box": [
+        755,
+        2486,
+        979,
+        2556
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.dateOfBirth.5": {
+      "box": [
+        755,
+        2559,
+        979,
+        2629
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "childData.fullName.1": {
+      "box": [
+        71,
+        2274,
+        755,
+        2345
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.fullName.2": {
+      "box": [
+        71,
+        2346,
+        755,
+        2416
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.fullName.3": {
+      "box": [
+        71,
+        2416,
+        755,
+        2487
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.fullName.4": {
+      "box": [
+        71,
+        2486,
+        755,
+        2556
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.fullName.5": {
+      "box": [
+        71,
+        2559,
+        755,
+        2629
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.inPreschoolAge.1": {
+      "box": [
+        1042,
+        2291,
+        1075,
+        2325
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inPreschoolAge.2": {
+      "box": [
+        1042,
+        2362,
+        1075,
+        2396
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inPreschoolAge.3": {
+      "box": [
+        1042,
+        2432,
+        1075,
+        2466
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inPreschoolAge.4": {
+      "box": [
+        1041,
+        2503,
+        1074,
+        2537
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inPreschoolAge.5": {
+      "box": [
+        1041,
+        2574,
+        1074,
+        2608
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inSchoolOrTraining.1": {
+      "box": [
+        1193,
+        2291,
+        1226,
+        2325
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inSchoolOrTraining.2": {
+      "box": [
+        1193,
+        2362,
+        1226,
+        2396
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inSchoolOrTraining.3": {
+      "box": [
+        1194,
+        2432,
+        1227,
+        2466
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inSchoolOrTraining.4": {
+      "box": [
+        1193,
+        2503,
+        1226,
+        2537
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.inSchoolOrTraining.5": {
+      "box": [
+        1193,
+        2574,
+        1226,
+        2608
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "childData.schoolOrCompany.1": {
+      "box": [
+        1287,
+        2275,
+        2184,
+        2345
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.schoolOrCompany.2": {
+      "box": [
+        1287,
+        2345,
+        2184,
+        2416
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.schoolOrCompany.3": {
+      "box": [
+        1287,
+        2416,
+        2184,
+        2486
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.schoolOrCompany.4": {
+      "box": [
+        1287,
+        2487,
+        2184,
+        2558
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "childData.schoolOrCompany.5": {
+      "box": [
+        1287,
+        2559,
+        2184,
+        2629
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "durationNonPerennialTaxLiability.from": {
+      "box": [
+        146,
+        1156,
+        496,
+        1226
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "durationNonPerennialTaxLiability.to": {
+      "box": [
+        146,
+        1227,
+        496,
+        1298
+      ],
+      "schema": {
+        "required": false,
+        "type": "date"
+      }
+    },
+    "personData.dateOfBirth.partner1": {
+      "box": [
+        543,
+        1671,
+        1465,
+        1742
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.dateOfBirth.partner2": {
+      "box": [
+        1465,
+        1671,
+        2406,
+        1742
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.employer.partner1": {
+      "box": [
+        543,
+        2024,
+        1466,
+        2094
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.employer.partner2": {
+      "box": [
+        1466,
+        2024,
+        2407,
+        2094
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.fullName.partner1": {
+      "box": [
+        543,
+        1528,
+        1465,
+        1671
+      ],
+      "schema": {
+        "required": true,
+        "type": "string"
+      }
+    },
+    "personData.fullName.partner2": {
+      "box": [
+        1467,
+        1526,
+        2406,
+        1668
+      ],
+      "schema": {
+        "required": true,
+        "type": "string"
+      }
+    },
+    "personData.job.partner1": {
+      "box": [
+        543,
+        1884,
+        1465,
+        1954
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.job.partner2": {
+      "box": [
+        1465,
+        1884,
+        2406,
+        1955
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.martialStatusTax": {
+      "box": [
+        543,
+        1741,
+        2406,
+        1811
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.religion.partner1": {
+      "box": [
+        543,
+        1813,
+        1465,
+        1883
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.religion.partner2": {
+      "box": [
+        1468,
+        1813,
+        2406,
+        1883
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "personData.typeOfAcquisition.dependent.partner1": {
+      "box": [
+        547,
+        1968,
+        580,
+        2000
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "personData.typeOfAcquisition.dependent.partner2": {
+      "box": [
+        1490,
+        1966,
+        1523,
+        2001
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "personData.typeOfAcquisition.notEmployed.partner1": {
+      "box": [
+        1107,
+        1966,
+        1140,
+        2001
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "personData.typeOfAcquisition.notEmployed.partner2": {
+      "box": [
+        2063,
+        1966,
+        2096,
+        2001
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "personData.typeOfAcquisition.selfEmployed.partner1": {
+      "box": [
+        855,
+        1966,
+        888,
+        2000
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "personData.typeOfAcquisition.selfEmployed.partner2": {
+      "box": [
+        1806,
+        1966,
+        1839,
+        2000
+      ],
+      "schema": {
+        "required": false,
+        "type": "bool"
+      }
+    },
+    "repayments.accountOrAccountChange.bankName": {
+      "box": [
+        1465,
+        2700,
+        2409,
+        2794
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      },
+      "offset": [
+        100,
+        0
+      ]
+    },
+    "repayments.accountOrAccountChange.iban": {
+      "box": [
+        1465,
+        2793,
+        2409,
+        2865
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      },
+      "offset": [
+        100,
+        0
+      ]
+    },
+    "repayments.accountOrAccountChange.postIban": {
+      "box": [
+        1468,
+        2865,
+        2409,
+        2931
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      },
+      "offset": [
+        100,
+        0
+      ]
+    },
+    "repayments.earmarkedPaymentAccount": {
+      "box": [
+        650,
+        2700,
+        1465,
+        2931
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "representativePerson.eMail": {
+      "box": [
+        793,
+        1299,
+        1465,
+        1369
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "representativePerson.firstName": {
+      "box": [
+        1762,
+        1157,
+        2408,
+        1225
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "representativePerson.lastName": {
+      "box": [
+        793,
+        1157,
+        1465,
+        1225
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "representativePerson.phoneNumberOrganisation": {
+      "box": [
+        1762,
+        1225,
+        2408,
+        1296
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    },
+    "representativePerson.phoneNumberPrivate": {
+      "box": [
+        793,
+        1225,
+        1465,
+        1296
+      ],
+      "schema": {
+        "required": false,
+        "type": "string"
+      }
+    }
+  },
+  "form": {
+    "size": [
+      2479,
+      3508
+    ],
+    "type": "part01-page01"
+  }
+}
