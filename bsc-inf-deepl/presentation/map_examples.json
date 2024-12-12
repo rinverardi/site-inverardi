@@ -1,0 +1,2722 @@
+{
+  "facts": {
+    "declaration": {
+      "canton": "sg",
+      "subject": "np",
+      "year": 2023
+    },
+    "fields": {
+      "childData.correctTo.1": "08.09.2026",
+      "childData.correctTo.2": "13.10.2022",
+      "childData.correctTo.3": "03.06.2026",
+      "childData.correctTo.4": "24.11.2026",
+      "childData.correctTo.5": "12.02.2025",
+      "childData.dateOfBirth.1": "30.05.2022",
+      "childData.dateOfBirth.2": "03.07.2024",
+      "childData.dateOfBirth.3": "31.01.2027",
+      "childData.dateOfBirth.4": "20.05.2023",
+      "childData.dateOfBirth.5": "02.06.2030",
+      "childData.fullName.1": "Dolor Est",
+      "childData.fullName.2": "Elit Taciti",
+      "childData.fullName.3": "Mollit Augue",
+      "childData.fullName.4": "Irure Per",
+      "childData.fullName.5": "Sunt Sed",
+      "childData.inPreschoolAge.1": true,
+      "childData.inPreschoolAge.2": true,
+      "childData.inPreschoolAge.3": true,
+      "childData.inPreschoolAge.4": true,
+      "childData.inPreschoolAge.5": true,
+      "childData.inSchoolOrTraining.1": true,
+      "childData.inSchoolOrTraining.2": true,
+      "childData.inSchoolOrTraining.3": true,
+      "childData.inSchoolOrTraining.4": true,
+      "childData.inSchoolOrTraining.5": true,
+      "childData.schoolOrCompany.1": "Duis Etiam",
+      "childData.schoolOrCompany.2": "Lacus Est",
+      "childData.schoolOrCompany.3": "Enim Luctus",
+      "childData.schoolOrCompany.4": "Mauris Culpa",
+      "childData.schoolOrCompany.5": "Aliquet Nisi",
+      "durationNonPerennialTaxLiability.from": "29.06.2030",
+      "durationNonPerennialTaxLiability.to": "20.06.2027",
+      "personData.dateOfBirth.partner1": "Mollit Est",
+      "personData.dateOfBirth.partner2": "Lectus Aute",
+      "personData.employer.partner1": "Tempor Taciti",
+      "personData.employer.partner2": "Veniam Nulla",
+      "personData.fullName.partner1": "Eget Sed",
+      "personData.fullName.partner2": "Esse Taciti",
+      "personData.job.partner1": "Litora Veniam",
+      "personData.job.partner2": "Amet Aute",
+      "personData.martialStatusTax": "Litora Turpis",
+      "personData.religion.partner1": "Lacus Turpis",
+      "personData.religion.partner2": "Ligula Litora",
+      "personData.typeOfAcquisition.dependent.partner1": true,
+      "personData.typeOfAcquisition.dependent.partner2": true,
+      "personData.typeOfAcquisition.notEmployed.partner1": true,
+      "personData.typeOfAcquisition.notEmployed.partner2": true,
+      "personData.typeOfAcquisition.selfEmployed.partner1": true,
+      "personData.typeOfAcquisition.selfEmployed.partner2": true,
+      "repayments.accountOrAccountChange.bankName": "Nam Veniam",
+      "repayments.accountOrAccountChange.iban": "Esse Culpa",
+      "repayments.accountOrAccountChange.postIban": "Etiam Est",
+      "repayments.earmarkedPaymentAccount": "Morbi Culpa",
+      "representativePerson.eMail": "Amet Justo",
+      "representativePerson.firstName": "Luctus Anim",
+      "representativePerson.lastName": "Quam Lectus",
+      "representativePerson.phoneNumberOrganisation": "Per Culpa",
+      "representativePerson.phoneNumberPrivate": "Per Enim"
+    },
+    "form": {
+      "size": [
+        2479,
+        3508
+      ],
+      "type": "part01-page01"
+    }
+  },
+  "predictions": {
+    "words": [
+      {
+        "box": [
+          2136,
+          21,
+          2390,
+          58
+        ],
+        "confidence": 0.5671725273132324,
+        "value": "www.steuern.sg.ch"
+      },
+      {
+        "box": [
+          2140,
+          96,
+          2342,
+          137
+        ],
+        "confidence": 0.8344855308532715,
+        "value": "Formular"
+      },
+      {
+        "box": [
+          2349,
+          92,
+          2383,
+          140
+        ],
+        "confidence": 0.9999481439590454,
+        "value": "1"
+      },
+      {
+        "box": [
+          945,
+          62,
+          1962,
+          216
+        ],
+        "confidence": 0.9706647396087646,
+        "value": "Steuererklärung"
+      },
+      {
+        "box": [
+          955,
+          185,
+          1038,
+          243
+        ],
+        "confidence": 0.9998749494552612,
+        "value": "für"
+      },
+      {
+        "box": [
+          1038,
+          188,
+          1260,
+          240
+        ],
+        "confidence": 0.7440090179443359,
+        "value": "natürliche"
+      },
+      {
+        "box": [
+          1270,
+          195,
+          1469,
+          236
+        ],
+        "confidence": 0.5689423680305481,
+        "value": "Personen"
+      },
+      {
+        "box": [
+          1181,
+          240,
+          1417,
+          281
+        ],
+        "confidence": 0.9813761711120605,
+        "value": "Gemeinde-"
+      },
+      {
+        "box": [
+          1428,
+          236,
+          1517,
+          281
+        ],
+        "confidence": 0.6571267247200012,
+        "value": "und"
+      },
+      {
+        "box": [
+          1527,
+          240,
+          1681,
+          281
+        ],
+        "confidence": 0.9719296097755432,
+        "value": "direkte"
+      },
+      {
+        "box": [
+          1691,
+          236,
+          1989,
+          284
+        ],
+        "confidence": 0.9443628191947937,
+        "value": "Bundessteuer"
+      },
+      {
+        "box": [
+          2106,
+          185,
+          2414,
+          284
+        ],
+        "confidence": 0.9999313354492188,
+        "value": "2023"
+      },
+      {
+        "box": [
+          959,
+          233,
+          1171,
+          295
+        ],
+        "confidence": 0.856500506401062,
+        "value": "Kantons-,"
+      },
+      {
+        "box": [
+          541,
+          298,
+          699,
+          339
+        ],
+        "confidence": 0.9981825351715088,
+        "value": "Kanton"
+      },
+      {
+        "box": [
+          709,
+          298,
+          901,
+          339
+        ],
+        "confidence": 0.6448003649711609,
+        "value": "St.Gallen"
+      },
+      {
+        "box": [
+          62,
+          1065,
+          168,
+          1117
+        ],
+        "confidence": 0.9863418936729431,
+        "value": "Dauer"
+      },
+      {
+        "box": [
+          154,
+          1069,
+          219,
+          1113
+        ],
+        "confidence": 0.9963738322257996,
+        "value": "bei"
+      },
+      {
+        "box": [
+          209,
+          1069,
+          298,
+          1113
+        ],
+        "confidence": 0.7388564348220825,
+        "value": "nicht"
+      },
+      {
+        "box": [
+          291,
+          1072,
+          486,
+          1113
+        ],
+        "confidence": 0.9364692568778992,
+        "value": "ganzjähriger"
+      },
+      {
+        "box": [
+          62,
+          1100,
+          264,
+          1151
+        ],
+        "confidence": 0.5642524361610413,
+        "value": "Steuerpflicht:"
+      },
+      {
+        "box": [
+          541,
+          1103,
+          719,
+          1144
+        ],
+        "confidence": 0.5929494500160217,
+        "value": "Rückfragen"
+      },
+      {
+        "box": [
+          726,
+          1110,
+          781,
+          1137
+        ],
+        "confidence": 0.9214847087860107,
+        "value": "an:"
+      },
+      {
+        "box": [
+          151,
+          1172,
+          346,
+          1209
+        ],
+        "confidence": 0.9365139007568359,
+        "value": "29.06.2030"
+      },
+      {
+        "box": [
+          534,
+          1172,
+          637,
+          1209
+        ],
+        "confidence": 0.7228255867958069,
+        "value": "Name"
+      },
+      {
+        "box": [
+          798,
+          1172,
+          907,
+          1213
+        ],
+        "confidence": 0.8142960667610168,
+        "value": "Quam"
+      },
+      {
+        "box": [
+          911,
+          1172,
+          1031,
+          1213
+        ],
+        "confidence": 0.9754462838172913,
+        "value": "Lectus"
+      },
+      {
+        "box": [
+          1476,
+          1172,
+          1630,
+          1209
+        ],
+        "confidence": 0.9514345526695251,
+        "value": "Vorname"
+      },
+      {
+        "box": [
+          1767,
+          1172,
+          1886,
+          1213
+        ],
+        "confidence": 0.9392569661140442,
+        "value": "Luctus"
+      },
+      {
+        "box": [
+          1886,
+          1172,
+          1979,
+          1213
+        ],
+        "confidence": 0.5743383765220642,
+        "value": "Anim"
+      },
+      {
+        "box": [
+          76,
+          1202,
+          134,
+          1233
+        ],
+        "confidence": 0.9557202458381653,
+        "value": "von"
+      },
+      {
+        "box": [
+          151,
+          1244,
+          346,
+          1281
+        ],
+        "confidence": 0.9713104367256165,
+        "value": "20.06.2027"
+      },
+      {
+        "box": [
+          534,
+          1240,
+          664,
+          1281
+        ],
+        "confidence": 0.9715703129768372,
+        "value": "Telefon"
+      },
+      {
+        "box": [
+          664,
+          1240,
+          767,
+          1281
+        ],
+        "confidence": 0.8174318075180054,
+        "value": "Privat"
+      },
+      {
+        "box": [
+          798,
+          1237,
+          870,
+          1281
+        ],
+        "confidence": 0.648552417755127,
+        "value": "Per"
+      },
+      {
+        "box": [
+          866,
+          1240,
+          959,
+          1281
+        ],
+        "confidence": 0.7476335763931274,
+        "value": "Enim"
+      },
+      {
+        "box": [
+          1472,
+          1240,
+          1602,
+          1281
+        ],
+        "confidence": 0.9382694363594055,
+        "value": "Telefon"
+      },
+      {
+        "box": [
+          1606,
+          1244,
+          1750,
+          1281
+        ],
+        "confidence": 0.9928160905838013,
+        "value": "Geschäft"
+      },
+      {
+        "box": [
+          1767,
+          1237,
+          1842,
+          1288
+        ],
+        "confidence": 0.9914819002151489,
+        "value": "Per"
+      },
+      {
+        "box": [
+          1832,
+          1237,
+          1945,
+          1288
+        ],
+        "confidence": 0.9735937118530273,
+        "value": "Culpa"
+      },
+      {
+        "box": [
+          72,
+          1261,
+          127,
+          1305
+        ],
+        "confidence": 0.9767333269119263,
+        "value": "bis"
+      },
+      {
+        "box": [
+          65,
+          1316,
+          192,
+          1367
+        ],
+        "confidence": 0.9375219345092773,
+        "value": "Stichtag"
+      },
+      {
+        "box": [
+          189,
+          1319,
+          250,
+          1360
+        ],
+        "confidence": 0.9970554113388062,
+        "value": "der"
+      },
+      {
+        "box": [
+          247,
+          1319,
+          418,
+          1357
+        ],
+        "confidence": 0.9835222959518433,
+        "value": "Personalien"
+      },
+      {
+        "box": [
+          418,
+          1322,
+          476,
+          1367
+        ],
+        "confidence": 0.9544070363044739,
+        "value": "per"
+      },
+      {
+        "box": [
+          538,
+          1312,
+          644,
+          1353
+        ],
+        "confidence": 0.9941125512123108,
+        "value": "E-Mail"
+      },
+      {
+        "box": [
+          798,
+          1312,
+          897,
+          1353
+        ],
+        "confidence": 0.7364602088928223,
+        "value": "Amet"
+      },
+      {
+        "box": [
+          894,
+          1316,
+          993,
+          1353
+        ],
+        "confidence": 0.9850407242774963,
+        "value": "Justo"
+      },
+      {
+        "box": [
+          1469,
+          1298,
+          1530,
+          1339
+        ],
+        "confidence": 0.9944103360176086,
+        "value": "Die"
+      },
+      {
+        "box": [
+          1524,
+          1302,
+          1643,
+          1343
+        ],
+        "confidence": 0.8290257453918457,
+        "value": "Angabe"
+      },
+      {
+        "box": [
+          1643,
+          1305,
+          1719,
+          1336
+        ],
+        "confidence": 0.886181652545929,
+        "value": "einer"
+      },
+      {
+        "box": [
+          1715,
+          1298,
+          1917,
+          1336
+        ],
+        "confidence": 0.8709662556648254,
+        "value": "E-Mailadresse"
+      },
+      {
+        "box": [
+          1910,
+          1298,
+          1989,
+          1339
+        ],
+        "confidence": 0.5271424055099487,
+        "value": "wird"
+      },
+      {
+        "box": [
+          1979,
+          1295,
+          2034,
+          1339
+        ],
+        "confidence": 0.9929106831550598,
+        "value": "als"
+      },
+      {
+        "box": [
+          2027,
+          1302,
+          2205,
+          1343
+        ],
+        "confidence": 0.9771255254745483,
+        "value": "Einwilligung"
+      },
+      {
+        "box": [
+          2201,
+          1302,
+          2263,
+          1343
+        ],
+        "confidence": 0.9269538521766663,
+        "value": "zur"
+      },
+      {
+        "box": [
+          2256,
+          1302,
+          2355,
+          1339
+        ],
+        "confidence": 0.9820201992988586,
+        "value": "unver-"
+      },
+      {
+        "box": [
+          1469,
+          1329,
+          1647,
+          1370
+        ],
+        "confidence": 0.7003201246261597,
+        "value": "schlüsselten"
+      },
+      {
+        "box": [
+          1640,
+          1329,
+          1876,
+          1370
+        ],
+        "confidence": 0.7578553557395935,
+        "value": "Kommunikation"
+      },
+      {
+        "box": [
+          1862,
+          1329,
+          1924,
+          1370
+        ],
+        "confidence": 0.8251093626022339,
+        "value": "via"
+      },
+      {
+        "box": [
+          1914,
+          1326,
+          2013,
+          1367
+        ],
+        "confidence": 0.7315790057182312,
+        "value": "E-Mail"
+      },
+      {
+        "box": [
+          2006,
+          1322,
+          2171,
+          1374
+        ],
+        "confidence": 0.9946369528770447,
+        "value": "betrachtet."
+      },
+      {
+        "box": [
+          65,
+          1350,
+          199,
+          1401
+        ],
+        "confidence": 0.5948415398597717,
+        "value": "Wegzug"
+      },
+      {
+        "box": [
+          192,
+          1353,
+          271,
+          1394
+        ],
+        "confidence": 0.5163541436195374,
+        "value": "bzw."
+      },
+      {
+        "box": [
+          271,
+          1357,
+          332,
+          1398
+        ],
+        "confidence": 0.7706851363182068,
+        "value": "per"
+      },
+      {
+        "box": [
+          329,
+          1350,
+          411,
+          1394
+        ],
+        "confidence": 0.9945831894874573,
+        "value": "Ende"
+      },
+      {
+        "box": [
+          408,
+          1350,
+          469,
+          1394
+        ],
+        "confidence": 0.947413444519043,
+        "value": "der"
+      },
+      {
+        "box": [
+          534,
+          1370,
+          740,
+          1422
+        ],
+        "confidence": 0.8795719742774963,
+        "value": "Vertragliche"
+      },
+      {
+        "box": [
+          740,
+          1377,
+          918,
+          1418
+        ],
+        "confidence": 0.530899167060852,
+        "value": "Vertretung"
+      },
+      {
+        "box": [
+          921,
+          1377,
+          969,
+          1411
+        ],
+        "confidence": 0.9678238034248352,
+        "value": "im"
+      },
+      {
+        "box": [
+          973,
+          1377,
+          1342,
+          1415
+        ],
+        "confidence": 0.6955797672271729,
+        "value": "Veranlagungsverfahren"
+      },
+      {
+        "box": [
+          1342,
+          1374,
+          1428,
+          1415
+        ],
+        "confidence": 0.9779778718948364,
+        "value": "wird"
+      },
+      {
+        "box": [
+          1428,
+          1381,
+          1489,
+          1411
+        ],
+        "confidence": 0.9978343844413757,
+        "value": "nur"
+      },
+      {
+        "box": [
+          1493,
+          1381,
+          1726,
+          1418
+        ],
+        "confidence": 0.5048911571502686,
+        "value": "angenommen,"
+      },
+      {
+        "box": [
+          1729,
+          1384,
+          1821,
+          1411
+        ],
+        "confidence": 0.9606720805168152,
+        "value": "wenn"
+      },
+      {
+        "box": [
+          1821,
+          1374,
+          1900,
+          1415
+        ],
+        "confidence": 0.9842994213104248,
+        "value": "eine"
+      },
+      {
+        "box": [
+          1900,
+          1374,
+          2078,
+          1411
+        ],
+        "confidence": 0.7613138556480408,
+        "value": "schriftliche"
+      },
+      {
+        "box": [
+          2078,
+          1374,
+          2246,
+          1411
+        ],
+        "confidence": 0.9068326354026794,
+        "value": "Vollmacht"
+      },
+      {
+        "box": [
+          69,
+          1391,
+          261,
+          1432
+        ],
+        "confidence": 0.9976269602775574,
+        "value": "Steuerpflicht."
+      },
+      {
+        "box": [
+          2242,
+          1370,
+          2386,
+          1422
+        ],
+        "confidence": 0.8845227956771851,
+        "value": "vorliegt."
+      },
+      {
+        "box": [
+          76,
+          1470,
+          312,
+          1521
+        ],
+        "confidence": 0.9590457081794739,
+        "value": "Personalien,"
+      },
+      {
+        "box": [
+          319,
+          1470,
+          456,
+          1511
+        ],
+        "confidence": 0.7000406384468079,
+        "value": "Berufs-"
+      },
+      {
+        "box": [
+          459,
+          1470,
+          541,
+          1514
+        ],
+        "confidence": 0.5089586973190308,
+        "value": "und"
+      },
+      {
+        "box": [
+          548,
+          1473,
+          931,
+          1511
+        ],
+        "confidence": 0.6483618021011353,
+        "value": "Familienverhältnisse"
+      },
+      {
+        "box": [
+          938,
+          1480,
+          1000,
+          1511
+        ],
+        "confidence": 0.9832602143287659,
+        "value": "am"
+      },
+      {
+        "box": [
+          1003,
+          1470,
+          1072,
+          1514
+        ],
+        "confidence": 0.9758101105690002,
+        "value": "31."
+      },
+      {
+        "box": [
+          1075,
+          1473,
+          1270,
+          1511
+        ],
+        "confidence": 0.8076432943344116,
+        "value": "Dezember"
+      },
+      {
+        "box": [
+          1274,
+          1473,
+          1370,
+          1514
+        ],
+        "confidence": 0.999927282333374,
+        "value": "2023"
+      },
+      {
+        "box": [
+          1376,
+          1470,
+          1476,
+          1518
+        ],
+        "confidence": 0.6179848909378052,
+        "value": "bzw."
+      },
+      {
+        "box": [
+          1479,
+          1480,
+          1541,
+          1511
+        ],
+        "confidence": 0.9635963439941406,
+        "value": "am"
+      },
+      {
+        "box": [
+          1544,
+          1466,
+          1650,
+          1518
+        ],
+        "confidence": 0.9952281713485718,
+        "value": "Ende"
+      },
+      {
+        "box": [
+          1647,
+          1470,
+          1722,
+          1514
+        ],
+        "confidence": 0.9762732982635498,
+        "value": "der"
+      },
+      {
+        "box": [
+          1722,
+          1470,
+          1972,
+          1521
+        ],
+        "confidence": 0.6198005676269531,
+        "value": "Steuerpflicht"
+      },
+      {
+        "box": [
+          555,
+          1531,
+          716,
+          1572
+        ],
+        "confidence": 0.99591064453125,
+        "value": "Ehemann"
+      },
+      {
+        "box": [
+          702,
+          1535,
+          736,
+          1572
+        ],
+        "confidence": 0.6679257750511169,
+        "value": "/"
+      },
+      {
+        "box": [
+          733,
+          1535,
+          945,
+          1576
+        ],
+        "confidence": 0.8582437038421631,
+        "value": "Einzelperson"
+      },
+      {
+        "box": [
+          928,
+          1535,
+          969,
+          1569
+        ],
+        "confidence": 0.16688328981399536,
+        "value": "/|"
+      },
+      {
+        "box": [
+          949,
+          1528,
+          1240,
+          1576
+        ],
+        "confidence": 0.5187543630599976,
+        "value": "Partner/Partnerin"
+      },
+      {
+        "box": [
+          1236,
+          1535,
+          1359,
+          1576
+        ],
+        "confidence": 0.6684458255767822,
+        "value": "(Person"
+      },
+      {
+        "box": [
+          1359,
+          1528,
+          1404,
+          1579
+        ],
+        "confidence": 0.9997691512107849,
+        "value": "1)"
+      },
+      {
+        "box": [
+          1472,
+          1531,
+          1626,
+          1572
+        ],
+        "confidence": 0.9895373582839966,
+        "value": "Ehefraul"
+      },
+      {
+        "box": [
+          1619,
+          1528,
+          1907,
+          1576
+        ],
+        "confidence": 0.7509509921073914,
+        "value": "Partner/Partnerin"
+      },
+      {
+        "box": [
+          1904,
+          1535,
+          2030,
+          1576
+        ],
+        "confidence": 0.5438429117202759,
+        "value": "(Person"
+      },
+      {
+        "box": [
+          2027,
+          1528,
+          2071,
+          1579
+        ],
+        "confidence": 0.999981164932251,
+        "value": "2)"
+      },
+      {
+        "box": [
+          548,
+          1576,
+          637,
+          1631
+        ],
+        "confidence": 0.9637255072593689,
+        "value": "Eget"
+      },
+      {
+        "box": [
+          634,
+          1576,
+          712,
+          1620
+        ],
+        "confidence": 0.9603433609008789,
+        "value": "Sed"
+      },
+      {
+        "box": [
+          1472,
+          1576,
+          1565,
+          1620
+        ],
+        "confidence": 0.9880679249763489,
+        "value": "Esse"
+      },
+      {
+        "box": [
+          1565,
+          1576,
+          1661,
+          1617
+        ],
+        "confidence": 0.956672191619873,
+        "value": "Taciti"
+      },
+      {
+        "box": [
+          79,
+          1617,
+          185,
+          1658
+        ],
+        "confidence": 0.6958299279212952,
+        "value": "Name,"
+      },
+      {
+        "box": [
+          185,
+          1617,
+          339,
+          1655
+        ],
+        "confidence": 0.6676672101020813,
+        "value": "Vorname"
+      },
+      {
+        "box": [
+          79,
+          1689,
+          308,
+          1727
+        ],
+        "confidence": 0.7025424242019653,
+        "value": "Geburtsdatum"
+      },
+      {
+        "box": [
+          548,
+          1685,
+          644,
+          1727
+        ],
+        "confidence": 0.9812353849411011,
+        "value": "Mollit"
+      },
+      {
+        "box": [
+          644,
+          1685,
+          712,
+          1730
+        ],
+        "confidence": 0.9928304553031921,
+        "value": "Est"
+      },
+      {
+        "box": [
+          1465,
+          1682,
+          1592,
+          1733
+        ],
+        "confidence": 0.7056243419647217,
+        "value": "Lectus"
+      },
+      {
+        "box": [
+          1589,
+          1685,
+          1678,
+          1727
+        ],
+        "confidence": 0.5782239437103271,
+        "value": "Aute"
+      },
+      {
+        "box": [
+          76,
+          1757,
+          233,
+          1795
+        ],
+        "confidence": 0.8835573792457581,
+        "value": "Zivilstand"
+      },
+      {
+        "box": [
+          548,
+          1757,
+          651,
+          1795
+        ],
+        "confidence": 0.9939106702804565,
+        "value": "Litora"
+      },
+      {
+        "box": [
+          651,
+          1754,
+          767,
+          1805
+        ],
+        "confidence": 0.9660317301750183,
+        "value": "Turpis"
+      },
+      {
+        "box": [
+          79,
+          1829,
+          254,
+          1867
+        ],
+        "confidence": 0.900173008441925,
+        "value": "Konfession"
+      },
+      {
+        "box": [
+          548,
+          1829,
+          658,
+          1870
+        ],
+        "confidence": 0.9962717294692993,
+        "value": "Lacus"
+      },
+      {
+        "box": [
+          658,
+          1826,
+          774,
+          1877
+        ],
+        "confidence": 0.9622198939323425,
+        "value": "Turpis"
+      },
+      {
+        "box": [
+          1469,
+          1826,
+          1582,
+          1877
+        ],
+        "confidence": 0.9921256899833679,
+        "value": "Ligula"
+      },
+      {
+        "box": [
+          1585,
+          1829,
+          1684,
+          1867
+        ],
+        "confidence": 0.5096076726913452,
+        "value": "Litora"
+      },
+      {
+        "box": [
+          76,
+          1898,
+          172,
+          1939
+        ],
+        "confidence": 0.6964109539985657,
+        "value": "Beruf"
+      },
+      {
+        "box": [
+          548,
+          1898,
+          651,
+          1939
+        ],
+        "confidence": 0.9316685199737549,
+        "value": "Litora"
+      },
+      {
+        "box": [
+          651,
+          1898,
+          788,
+          1939
+        ],
+        "confidence": 0.8952453136444092,
+        "value": "Veniam"
+      },
+      {
+        "box": [
+          1465,
+          1894,
+          1572,
+          1946
+        ],
+        "confidence": 0.9333190321922302,
+        "value": "Amet"
+      },
+      {
+        "box": [
+          1565,
+          1898,
+          1654,
+          1942
+        ],
+        "confidence": 0.8009323477745056,
+        "value": "Aute"
+      },
+      {
+        "box": [
+          79,
+          1973,
+          250,
+          2011
+        ],
+        "confidence": 0.9927704930305481,
+        "value": "Erwerbsart"
+      },
+      {
+        "box": [
+          541,
+          1960,
+          593,
+          2011
+        ],
+        "confidence": 0.8278973698616028,
+        "value": "-"
+      },
+      {
+        "box": [
+          586,
+          1966,
+          832,
+          2018
+        ],
+        "confidence": 0.9179590344429016,
+        "value": "unselbständig*"
+      },
+      {
+        "box": [
+          863,
+          1966,
+          897,
+          2001
+        ],
+        "confidence": 0.7859302759170532,
+        "value": "-"
+      },
+      {
+        "box": [
+          890,
+          1966,
+          1082,
+          2018
+        ],
+        "confidence": 0.6542335748672485,
+        "value": "selbständig"
+      },
+      {
+        "box": [
+          1106,
+          1966,
+          1144,
+          2004
+        ],
+        "confidence": 0.31000813841819763,
+        "value": "-"
+      },
+      {
+        "box": [
+          1144,
+          1963,
+          1243,
+          2018
+        ],
+        "confidence": 0.6522936820983887,
+        "value": "nicht"
+      },
+      {
+        "box": [
+          1236,
+          1973,
+          1441,
+          2014
+        ],
+        "confidence": 0.9617668986320496,
+        "value": "erwerbstätig"
+      },
+      {
+        "box": [
+          1486,
+          1966,
+          1527,
+          2004
+        ],
+        "confidence": 0.3793705403804779,
+        "value": "H"
+      },
+      {
+        "box": [
+          1527,
+          1966,
+          1770,
+          2018
+        ],
+        "confidence": 0.6623900532722473,
+        "value": "unselbständig*"
+      },
+      {
+        "box": [
+          1804,
+          1966,
+          1842,
+          2004
+        ],
+        "confidence": 0.583023190498352,
+        "value": "H"
+      },
+      {
+        "box": [
+          1842,
+          1966,
+          2030,
+          2018
+        ],
+        "confidence": 0.9673241376876831,
+        "value": "selbständig"
+      },
+      {
+        "box": [
+          2099,
+          1966,
+          2191,
+          2011
+        ],
+        "confidence": 0.8818467855453491,
+        "value": "nicht"
+      },
+      {
+        "box": [
+          2184,
+          1966,
+          2396,
+          2018
+        ],
+        "confidence": 0.9262458682060242,
+        "value": "erwerbstätig"
+      },
+      {
+        "box": [
+          79,
+          2045,
+          284,
+          2086
+        ],
+        "confidence": 0.9638957977294922,
+        "value": "*Arbeitgeber"
+      },
+      {
+        "box": [
+          545,
+          2035,
+          688,
+          2090
+        ],
+        "confidence": 0.9872387051582336,
+        "value": "Tempor"
+      },
+      {
+        "box": [
+          688,
+          2038,
+          788,
+          2079
+        ],
+        "confidence": 0.8380676507949829,
+        "value": "Taciti"
+      },
+      {
+        "box": [
+          1469,
+          2038,
+          1606,
+          2079
+        ],
+        "confidence": 0.758212685585022,
+        "value": "Veniam"
+      },
+      {
+        "box": [
+          1609,
+          2038,
+          1702,
+          2079
+        ],
+        "confidence": 0.8156118392944336,
+        "value": "Nulla"
+      },
+      {
+        "box": [
+          76,
+          2107,
+          219,
+          2158
+        ],
+        "confidence": 0.9252408146858215,
+        "value": "Kinder,"
+      },
+      {
+        "box": [
+          223,
+          2107,
+          291,
+          2151
+        ],
+        "confidence": 0.9999545812606812,
+        "value": "für"
+      },
+      {
+        "box": [
+          291,
+          2110,
+          404,
+          2148
+        ],
+        "confidence": 0.9947168231010437,
+        "value": "deren"
+      },
+      {
+        "box": [
+          411,
+          2110,
+          596,
+          2148
+        ],
+        "confidence": 0.630336344242096,
+        "value": "Unterhalt"
+      },
+      {
+        "box": [
+          599,
+          2107,
+          664,
+          2151
+        ],
+        "confidence": 0.9771015048027039,
+        "value": "Sie"
+      },
+      {
+        "box": [
+          664,
+          2114,
+          740,
+          2155
+        ],
+        "confidence": 0.9989275336265564,
+        "value": "zur"
+      },
+      {
+        "box": [
+          740,
+          2107,
+          966,
+          2158
+        ],
+        "confidence": 0.9941074848175049,
+        "value": "Hauptsache"
+      },
+      {
+        "box": [
+          969,
+          2110,
+          1198,
+          2151
+        ],
+        "confidence": 0.975825309753418,
+        "value": "aufkommen"
+      },
+      {
+        "box": [
+          76,
+          2175,
+          237,
+          2213
+        ],
+        "confidence": 0.6269021034240723,
+        "value": "Vorname,"
+      },
+      {
+        "box": [
+          237,
+          2172,
+          339,
+          2213
+        ],
+        "confidence": 0.9836920499801636,
+        "value": "Name"
+      },
+      {
+        "box": [
+          760,
+          2169,
+          901,
+          2210
+        ],
+        "confidence": 0.6388084292411804,
+        "value": "Geburts-"
+      },
+      {
+        "box": [
+          1031,
+          2172,
+          1085,
+          2210
+        ],
+        "confidence": 0.7512547373771667,
+        "value": "Im"
+      },
+      {
+        "box": [
+          1140,
+          2165,
+          1188,
+          2213
+        ],
+        "confidence": 0.9929116368293762,
+        "value": "In"
+      },
+      {
+        "box": [
+          1178,
+          2169,
+          1281,
+          2210
+        ],
+        "confidence": 0.9079801440238953,
+        "value": "Schule"
+      },
+      {
+        "box": [
+          1287,
+          2169,
+          1400,
+          2210
+        ],
+        "confidence": 0.8725599646568298,
+        "value": "Sofern"
+      },
+      {
+        "box": [
+          1397,
+          2165,
+          1445,
+          2213
+        ],
+        "confidence": 0.99672532081604,
+        "value": "in"
+      },
+      {
+        "box": [
+          1438,
+          2169,
+          1613,
+          2210
+        ],
+        "confidence": 0.8973198533058167,
+        "value": "beruflicher"
+      },
+      {
+        "box": [
+          1613,
+          2172,
+          1801,
+          2213
+        ],
+        "confidence": 0.9619588255882263,
+        "value": "Ausbildung:"
+      },
+      {
+        "box": [
+          2188,
+          2169,
+          2294,
+          2210
+        ],
+        "confidence": 0.9841963052749634,
+        "value": "Dauer"
+      },
+      {
+        "box": [
+          2294,
+          2172,
+          2349,
+          2210
+        ],
+        "confidence": 0.8727953433990479,
+        "value": "bis"
+      },
+      {
+        "box": [
+          760,
+          2199,
+          873,
+          2240
+        ],
+        "confidence": 0.7018144726753235,
+        "value": "datum"
+      },
+      {
+        "box": [
+          976,
+          2199,
+          1137,
+          2240
+        ],
+        "confidence": 0.5249559879302979,
+        "value": "Vorschul-"
+      },
+      {
+        "box": [
+          1137,
+          2199,
+          1219,
+          2240
+        ],
+        "confidence": 0.6039813756942749,
+        "value": "oder"
+      },
+      {
+        "box": [
+          1212,
+          2199,
+          1287,
+          2240
+        ],
+        "confidence": 0.9900874495506287,
+        "value": "Aus-"
+      },
+      {
+        "box": [
+          1287,
+          2199,
+          1400,
+          2240
+        ],
+        "confidence": 0.9779807329177856,
+        "value": "Schule"
+      },
+      {
+        "box": [
+          1397,
+          2199,
+          1479,
+          2240
+        ],
+        "confidence": 0.8320131897926331,
+        "value": "oder"
+      },
+      {
+        "box": [
+          1479,
+          2199,
+          1637,
+          2237
+        ],
+        "confidence": 0.9400242567062378,
+        "value": "Lehrfirma"
+      },
+      {
+        "box": [
+          1014,
+          2230,
+          1099,
+          2275
+        ],
+        "confidence": 0.5243493914604187,
+        "value": "alter"
+      },
+      {
+        "box": [
+          1154,
+          2234,
+          1277,
+          2275
+        ],
+        "confidence": 0.9561809301376343,
+        "value": "bildung"
+      },
+      {
+        "box": [
+          79,
+          2288,
+          175,
+          2330
+        ],
+        "confidence": 0.9923399686813354,
+        "value": "Dolor"
+      },
+      {
+        "box": [
+          175,
+          2285,
+          243,
+          2333
+        ],
+        "confidence": 0.999932050704956,
+        "value": "Est"
+      },
+      {
+        "box": [
+          760,
+          2288,
+          955,
+          2330
+        ],
+        "confidence": 0.9682498574256897,
+        "value": "30.05.2022"
+      },
+      {
+        "box": [
+          1291,
+          2288,
+          1376,
+          2333
+        ],
+        "confidence": 0.9958742260932922,
+        "value": "Duis"
+      },
+      {
+        "box": [
+          1380,
+          2288,
+          1479,
+          2330
+        ],
+        "confidence": 0.9372135996818542,
+        "value": "Etiam"
+      },
+      {
+        "box": [
+          2188,
+          2292,
+          2383,
+          2330
+        ],
+        "confidence": 0.9992557168006897,
+        "value": "08.09.2026"
+      },
+      {
+        "box": [
+          76,
+          2357,
+          141,
+          2405
+        ],
+        "confidence": 0.9953725934028625,
+        "value": "Elit"
+      },
+      {
+        "box": [
+          141,
+          2360,
+          237,
+          2401
+        ],
+        "confidence": 0.991152822971344,
+        "value": "Taciti"
+      },
+      {
+        "box": [
+          760,
+          2360,
+          955,
+          2401
+        ],
+        "confidence": 0.9951243996620178,
+        "value": "03.07.2024"
+      },
+      {
+        "box": [
+          1291,
+          2360,
+          1404,
+          2401
+        ],
+        "confidence": 0.9889601469039917,
+        "value": "Lacus"
+      },
+      {
+        "box": [
+          1400,
+          2357,
+          1469,
+          2401
+        ],
+        "confidence": 0.9786497354507446,
+        "value": "Est"
+      },
+      {
+        "box": [
+          2191,
+          2360,
+          2383,
+          2401
+        ],
+        "confidence": 0.9409685730934143,
+        "value": "13.10.2022"
+      },
+      {
+        "box": [
+          72,
+          2425,
+          178,
+          2477
+        ],
+        "confidence": 0.7114630937576294,
+        "value": "Mollit"
+      },
+      {
+        "box": [
+          172,
+          2429,
+          295,
+          2480
+        ],
+        "confidence": 0.9550910592079163,
+        "value": "Augue"
+      },
+      {
+        "box": [
+          760,
+          2432,
+          955,
+          2470
+        ],
+        "confidence": 0.7698376774787903,
+        "value": "31.01.2027"
+      },
+      {
+        "box": [
+          1291,
+          2429,
+          1390,
+          2477
+        ],
+        "confidence": 0.8157146573066711,
+        "value": "Enim"
+      },
+      {
+        "box": [
+          1390,
+          2432,
+          1506,
+          2470
+        ],
+        "confidence": 0.8757400512695312,
+        "value": "Luctus"
+      },
+      {
+        "box": [
+          2188,
+          2432,
+          2383,
+          2470
+        ],
+        "confidence": 0.9981901049613953,
+        "value": "03.06.2026"
+      },
+      {
+        "box": [
+          76,
+          2501,
+          165,
+          2542
+        ],
+        "confidence": 0.5852351784706116,
+        "value": "lrure"
+      },
+      {
+        "box": [
+          165,
+          2497,
+          233,
+          2542
+        ],
+        "confidence": 0.977088451385498,
+        "value": "Per"
+      },
+      {
+        "box": [
+          760,
+          2501,
+          955,
+          2542
+        ],
+        "confidence": 0.9876970648765564,
+        "value": "20.05.2023"
+      },
+      {
+        "box": [
+          1287,
+          2497,
+          1417,
+          2549
+        ],
+        "confidence": 0.9936123490333557,
+        "value": "Mauris"
+      },
+      {
+        "box": [
+          1414,
+          2501,
+          1524,
+          2552
+        ],
+        "confidence": 0.892660915851593,
+        "value": "Culpa"
+      },
+      {
+        "box": [
+          2184,
+          2501,
+          2383,
+          2542
+        ],
+        "confidence": 0.9898843765258789,
+        "value": "24.11.2026"
+      },
+      {
+        "box": [
+          76,
+          2573,
+          165,
+          2614
+        ],
+        "confidence": 0.939109206199646,
+        "value": "Sunt"
+      },
+      {
+        "box": [
+          165,
+          2573,
+          240,
+          2617
+        ],
+        "confidence": 0.8068280816078186,
+        "value": "Sed"
+      },
+      {
+        "box": [
+          760,
+          2573,
+          955,
+          2614
+        ],
+        "confidence": 0.9866397976875305,
+        "value": "02.06.2030"
+      },
+      {
+        "box": [
+          1291,
+          2569,
+          1417,
+          2624
+        ],
+        "confidence": 0.676872968673706,
+        "value": "Aliquet"
+      },
+      {
+        "box": [
+          1414,
+          2573,
+          1489,
+          2617
+        ],
+        "confidence": 0.8497739434242249,
+        "value": "Nisi"
+      },
+      {
+        "box": [
+          2191,
+          2573,
+          2383,
+          2614
+        ],
+        "confidence": 0.9718823432922363,
+        "value": "12.02.2025"
+      },
+      {
+        "box": [
+          76,
+          2638,
+          367,
+          2689
+        ],
+        "confidence": 0.7856327891349792,
+        "value": "Rückzahlungen"
+      },
+      {
+        "box": [
+          72,
+          2700,
+          226,
+          2751
+        ],
+        "confidence": 0.5600429177284241,
+        "value": "Allfällige"
+      },
+      {
+        "box": [
+          226,
+          2700,
+          569,
+          2751
+        ],
+        "confidence": 0.762640118598938,
+        "value": "Steuerrückzahlungen"
+      },
+      {
+        "box": [
+          668,
+          2703,
+          890,
+          2744
+        ],
+        "confidence": 0.5914594531059265,
+        "value": "Vorgemerktes"
+      },
+      {
+        "box": [
+          894,
+          2700,
+          1192,
+          2747
+        ],
+        "confidence": 0.5105554461479187,
+        "value": "Auszahlungskonto"
+      },
+      {
+        "box": [
+          1479,
+          2703,
+          1589,
+          2741
+        ],
+        "confidence": 0.768408477306366,
+        "value": "Konto"
+      },
+      {
+        "box": [
+          1582,
+          2703,
+          1613,
+          2741
+        ],
+        "confidence": 0.9229954481124878,
+        "value": "/"
+      },
+      {
+        "box": [
+          1619,
+          2703,
+          1869,
+          2744
+        ],
+        "confidence": 0.9960907101631165,
+        "value": "Kontoänderung"
+      },
+      {
+        "box": [
+          72,
+          2734,
+          223,
+          2785
+        ],
+        "confidence": 0.857524037361145,
+        "value": "erfolgen"
+      },
+      {
+        "box": [
+          219,
+          2737,
+          284,
+          2782
+        ],
+        "confidence": 0.9630112648010254,
+        "value": "auf"
+      },
+      {
+        "box": [
+          281,
+          2737,
+          350,
+          2778
+        ],
+        "confidence": 0.9980410933494568,
+        "value": "das"
+      },
+      {
+        "box": [
+          339,
+          2741,
+          418,
+          2782
+        ],
+        "confidence": 0.9942041039466858,
+        "value": "von"
+      },
+      {
+        "box": [
+          411,
+          2737,
+          510,
+          2778
+        ],
+        "confidence": 0.5505545139312744,
+        "value": "Ihnen"
+      },
+      {
+        "box": [
+          1483,
+          2754,
+          1661,
+          2792
+        ],
+        "confidence": 0.846354603767395,
+        "value": "Bankname:"
+      },
+      {
+        "box": [
+          1883,
+          2727,
+          1975,
+          2768
+        ],
+        "confidence": 0.6821537017822266,
+        "value": "Nam"
+      },
+      {
+        "box": [
+          1975,
+          2727,
+          2109,
+          2765
+        ],
+        "confidence": 0.6098750233650208,
+        "value": "Veniam"
+      },
+      {
+        "box": [
+          76,
+          2771,
+          278,
+          2813
+        ],
+        "confidence": 0.7860168814659119,
+        "value": "bezeichnete"
+      },
+      {
+        "box": [
+          278,
+          2771,
+          384,
+          2813
+        ],
+        "confidence": 0.8901686072349548,
+        "value": "Konto"
+      },
+      {
+        "box": [
+          384,
+          2771,
+          469,
+          2816
+        ],
+        "confidence": 0.7414128184318542,
+        "value": "(Feld"
+      },
+      {
+        "box": [
+          466,
+          2771,
+          524,
+          2816
+        ],
+        "confidence": 0.995479941368103,
+        "value": "A)."
+      },
+      {
+        "box": [
+          72,
+          2802,
+          185,
+          2854
+        ],
+        "confidence": 0.9732152223587036,
+        "value": "Wenn"
+      },
+      {
+        "box": [
+          175,
+          2806,
+          254,
+          2850
+        ],
+        "confidence": 0.996760904788971,
+        "value": "Feld"
+      },
+      {
+        "box": [
+          247,
+          2806,
+          295,
+          2854
+        ],
+        "confidence": 0.9998944997787476,
+        "value": "A"
+      },
+      {
+        "box": [
+          288,
+          2809,
+          360,
+          2850
+        ],
+        "confidence": 0.8486347794532776,
+        "value": "leer"
+      },
+      {
+        "box": [
+          353,
+          2809,
+          411,
+          2854
+        ],
+        "confidence": 0.9523690938949585,
+        "value": "ist,"
+      },
+      {
+        "box": [
+          654,
+          2795,
+          757,
+          2837
+        ],
+        "confidence": 0.9893059134483337,
+        "value": "Morbi"
+      },
+      {
+        "box": [
+          757,
+          2792,
+          866,
+          2843
+        ],
+        "confidence": 0.9738222360610962,
+        "value": "Culpa"
+      },
+      {
+        "box": [
+          1479,
+          2823,
+          1633,
+          2864
+        ],
+        "confidence": 0.5581339597702026,
+        "value": "BAN-Nr:"
+      },
+      {
+        "box": [
+          1886,
+          2809,
+          1979,
+          2850
+        ],
+        "confidence": 0.9975453019142151,
+        "value": "Esse"
+      },
+      {
+        "box": [
+          1979,
+          2806,
+          2088,
+          2861
+        ],
+        "confidence": 0.9871085286140442,
+        "value": "Culpa"
+      },
+      {
+        "box": [
+          69,
+          2840,
+          120,
+          2888
+        ],
+        "confidence": 0.9164849519729614,
+        "value": "in"
+      },
+      {
+        "box": [
+          113,
+          2843,
+          192,
+          2885
+        ],
+        "confidence": 0.5294599533081055,
+        "value": "Feld"
+      },
+      {
+        "box": [
+          189,
+          2843,
+          223,
+          2885
+        ],
+        "confidence": 0.9899616241455078,
+        "value": "B"
+      },
+      {
+        "box": [
+          219,
+          2843,
+          281,
+          2885
+        ],
+        "confidence": 0.8578687906265259,
+        "value": "die"
+      },
+      {
+        "box": [
+          281,
+          2847,
+          497,
+          2888
+        ],
+        "confidence": 0.788815975189209,
+        "value": "notwendigen"
+      },
+      {
+        "box": [
+          1479,
+          2864,
+          1537,
+          2895
+        ],
+        "confidence": 0.9958433508872986,
+        "value": "oder"
+      },
+      {
+        "box": [
+          72,
+          2878,
+          230,
+          2929
+        ],
+        "confidence": 0.876068115234375,
+        "value": "Angaben"
+      },
+      {
+        "box": [
+          230,
+          2885,
+          397,
+          2926
+        ],
+        "confidence": 0.8567609190940857,
+        "value": "eintragen."
+      },
+      {
+        "box": [
+          1483,
+          2888,
+          1705,
+          2929
+        ],
+        "confidence": 0.3886304497718811,
+        "value": "POSt-IBAN-NI:"
+      },
+      {
+        "box": [
+          1890,
+          2878,
+          1993,
+          2919
+        ],
+        "confidence": 0.7138237357139587,
+        "value": "Etiam"
+      },
+      {
+        "box": [
+          1993,
+          2874,
+          2061,
+          2922
+        ],
+        "confidence": 0.9998893737792969,
+        "value": "Est"
+      },
+      {
+        "box": [
+          69,
+          2943,
+          172,
+          2984
+        ],
+        "confidence": 0.7761713266372681,
+        "value": "Nicht"
+      },
+      {
+        "box": [
+          178,
+          2943,
+          367,
+          2984
+        ],
+        "confidence": 0.8020666241645813,
+        "value": "ausfüllen!"
+      },
+      {
+        "box": [
+          2010,
+          2943,
+          2410,
+          2994
+        ],
+        "confidence": 0.5336976051330566,
+        "value": "Eriedigungsvermerke"
+      },
+      {
+        "box": [
+          86,
+          3004,
+          226,
+          3046
+        ],
+        "confidence": 0.9726235866546631,
+        "value": "Eingang:"
+      },
+      {
+        "box": [
+          551,
+          3004,
+          719,
+          3046
+        ],
+        "confidence": 0.9956884980201721,
+        "value": "Erfassung:"
+      },
+      {
+        "box": [
+          1017,
+          3004,
+          1267,
+          3042
+        ],
+        "confidence": 0.7524722218513489,
+        "value": "wsv-Kontrolle:"
+      },
+      {
+        "box": [
+          1486,
+          3008,
+          1702,
+          3046
+        ],
+        "confidence": 0.5748916268348694,
+        "value": "Veranlagung:"
+      },
+      {
+        "box": [
+          1951,
+          3004,
+          2188,
+          3046
+        ],
+        "confidence": 0.9066582322120667,
+        "value": "AHv-Meldung:"
+      },
+      {
+        "box": [
+          83,
+          3200,
+          226,
+          3237
+        ],
+        "confidence": 0.9309723973274231,
+        "value": "Notizen:"
+      },
+      {
+        "box": [
+          65,
+          3446,
+          113,
+          3481
+        ],
+        "confidence": 0.9849209189414978,
+        "value": "HA"
+      },
+      {
+        "box": [
+          106,
+          3450,
+          185,
+          3481
+        ],
+        "confidence": 0.9992009997367859,
+        "value": "(2023)"
+      },
+      {
+        "box": [
+          189,
+          3450,
+          254,
+          3477
+        ],
+        "confidence": 0.986835241317749,
+        "value": "12.23"
+      },
+      {
+        "box": [
+          1188,
+          3439,
+          1287,
+          3481
+        ],
+        "confidence": 0.9710333943367004,
+        "value": "01.01"
+      }
+    ],
+    "declaration": {
+      "canton": "sg",
+      "subject": "np",
+      "year": 2023
+    },
+    "form": {
+      "type": "part01-page01"
+    },
+    "fields": {
+      "durationNonPerennialTaxLiability.from": "29.06.2030",
+      "representativePerson.lastName": "Quam Lectus",
+      "representativePerson.firstName": "Luctus Anim",
+      "durationNonPerennialTaxLiability.to": "20.06.2027",
+      "representativePerson.phoneNumberPrivate": "Per Enim",
+      "representativePerson.phoneNumberOrganisation": "Per Culpa",
+      "representativePerson.eMail": "Amet Justo",
+      "personData.fullName.partner1": "Eget Sed",
+      "personData.fullName.partner2": "Esse Taciti",
+      "personData.dateOfBirth.partner1": "Mollit Est",
+      "personData.dateOfBirth.partner2": "Lectus Aute",
+      "personData.martialStatusTax": "Litora Turpis",
+      "personData.religion.partner1": "Lacus Turpis",
+      "personData.religion.partner2": "Ligula Litora",
+      "personData.job.partner1": "Litora Veniam",
+      "personData.job.partner2": "Amet Aute",
+      "personData.employer.partner1": "Tempor Taciti",
+      "personData.employer.partner2": "Veniam Nulla",
+      "childData.fullName.1": "Dolor Est",
+      "childData.dateOfBirth.1": "30.05.2022",
+      "childData.schoolOrCompany.1": "Duis Etiam",
+      "childData.correctTo.1": "08.09.2026",
+      "childData.fullName.2": "Elit Taciti",
+      "childData.dateOfBirth.2": "03.07.2024",
+      "childData.schoolOrCompany.2": "Lacus Est",
+      "childData.correctTo.2": "13.10.2022",
+      "childData.fullName.3": "Mollit Augue",
+      "childData.dateOfBirth.3": "31.01.2027",
+      "childData.schoolOrCompany.3": "Enim Luctus",
+      "childData.correctTo.3": "03.06.2026",
+      "childData.fullName.4": "lrure Per",
+      "childData.dateOfBirth.4": "20.05.2023",
+      "childData.schoolOrCompany.4": "Mauris Culpa",
+      "childData.correctTo.4": "24.11.2026",
+      "childData.fullName.5": "Sunt Sed",
+      "childData.dateOfBirth.5": "02.06.2030",
+      "childData.schoolOrCompany.5": "Aliquet Nisi",
+      "childData.correctTo.5": "12.02.2025",
+      "repayments.earmarkedPaymentAccount": "Morbi Culpa",
+      "repayments.accountOrAccountChange.bankName": "Nam Veniam",
+      "repayments.accountOrAccountChange.iban": "Esse Culpa",
+      "repayments.accountOrAccountChange.postIban": "Etiam Est"
+    }
+  }
+}
